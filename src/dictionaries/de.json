@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Startseite",
+    "projects": "Projekte",
+    "about": "Über mich",
+    "contact": "Kontakt"
+  },
+  "hero": {
+    "role": "Full-Stack & KI-Automatisierungsingenieur",
+    "tagline": "Die Zukunft der Arbeit mit Künstlicher Intelligenz und skalierbaren Architekturen automatisieren.",
+    "description": "Ich helfe Unternehmen dabei, ihre Abläufe zu optimieren, Workflows zu automatisieren und KI zu integrieren, um die Produktivität zu vervielfachen und die Betriebskosten zu senken.",
+    "cta_projects": "Projekte ansehen",
+    "cta_contact": "Reden wir über Geschäfte"
+  },
+  "bento": {
+    "profile_title": "Jeshua Salazar",
+    "profile_subtitle": "AI & Automation Engineer",
+    "profile_bio": "Ich entwerfe Softwarelösungen mit Fokus auf den geschäftlichen ROI. Spezialisiert auf die Anbindung von Sprachmodellen an Datenbanken und Geschäftsprozesse.",
+    "skills_title": "Kernkompetenzen",
+    "skills_automation": "Prozessautomatisierung",
+    "skills_automation_desc": "Autonome Workflows, die repetitive Aufgaben eliminieren und menschliche Fehler auf 0 % reduzieren.",
+    "skills_ai": "KI-Integration",
+    "skills_ai_desc": "Autonome Agenten, maßgeschneiderte LLMs und Retrieval-Augmented Generation (RAG), angepasst an Ihr Unternehmen.",
+    "skills_fullstack": "Full-Stack-Entwicklung",
+    "skills_fullstack_desc": "Ultraschnelle, sichere Weboberflächen auf Basis robuster serverloser Infrastrukturen.",
+    "stats_title": "Messbare Wirkung",
+    "stats_hours": "Eingesparte Stunden",
+    "stats_efficiency": "Operative Effizienz",
+    "stats_cost": "Kostensenkung"
+  },
+  "contact": {
+    "title": "Eine Zusammenarbeit starten",
+    "subtitle": "Erzählen Sie mir von Ihrem aktuellen Engpass und lassen Sie uns eine Lösung entwerfen.",
+    "name": "Vollständiger Name",
+    "email": "Geschäftliche E-Mail-Adresse",
+    "organization": "Organisation / Unternehmen (Optional)",
+    "projectType": "Projekttyp",
+    "projectType_placeholder": "Wählen Sie eine Option",
+    "projectType_product": "Webproduktentwicklung",
+    "projectType_automation": "Prozessautomatisierung",
+    "projectType_ia": "KI-Integration / LLMs",
+    "projectType_colab": "Langfristige Zusammenarbeit",
+    "projectType_other": "Andere Anfrage",
+    "message": "Projektdetails (Problem, Ziele, ungefähres Budget)",
+    "consent": "Ich bin damit einverstanden, dass meine Daten zur Bearbeitung dieser Anfrage verarbeitet werden.",
+    "submit": "Nachricht senden",
+    "sending": "Wird gesendet...",
+    "success": "Nachricht erfolgreich gesendet! Ich werde Ihnen innerhalb von 24 Geschäftsstunden antworten.",
+    "error_invalid": "Bitte füllen Sie alle Pflichtfelder mit gültigen Daten aus.",
+    "error_bot": "Die Antispam-Überprüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
+    "error_server": "Interner Serverfehler. Bitte senden Sie mir direkt eine E-Mail an contacto@jeshuasalazar.com."
+  },
+  "footer": {
+    "rights": "Alle Rechte vorbehalten.",
+    "privacy": "Datenschutzerklärung",
+    "built_with": "Erstellt mit Next.js und Cloudflare"
+  }
+}

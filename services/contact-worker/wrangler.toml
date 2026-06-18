@@ -1,0 +1,13 @@
+name = "contact-worker"
+main = "src/index.ts"
+compatibility_date = "2024-05-24"
+
+# Configuration for production
+[vars]
+ALLOWED_ORIGIN = "https://jeshuasalazar.com"
+# Turnstile site key (public)
+TURNSTILE_SITE_KEY = "0x4AAAAAAAxx-XXXXXX-XXXXX" # Replace with your real Turnstile Site Key
+# Send email notification to:
+CONTACT_TO = "contacto@jeshuasalazar.com"
+# Send email from (must be validated in Resend):
+CONTACT_FROM = "contacto@jeshuasalazar.com"

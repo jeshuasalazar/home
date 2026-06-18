@@ -1,0 +1,33 @@
+---
+title: "Automatización de Facturación SaaS Global"
+summary: "Reconciliación y automatización de flujos de pago con Stripe y Xero para un SaaS multi-inquilino."
+year: 2026
+status: published
+role: "Consultor de Automatización Senior"
+problem: "El equipo de finanzas realizaba conciliaciones manuales semanales que consumían 20 horas de trabajo y presentaban un 5% de errores de facturación."
+outcomes:
+  - "Reducción de horas de reconciliación manual a 0 horas/semana."
+  - "Eliminación completa del error humano en facturación de suscripciones."
+  - "Ahorro directo de $15,000/año en cargos por disputas y errores."
+technologies:
+  - "Stripe API"
+  - "Cloudflare Workers"
+  - "Zod"
+  - "Resend REST"
+  - "TypeScript"
+featured: false
+order: 2
+updatedAt: "2026-06-18"
+---
+
+## Descripción del Proyecto
+
+Este proyecto abordó la ineficiencia de la facturación en un SaaS global que procesa miles de transacciones mensuales. El mayor desafío residía en conciliar las facturas de Stripe con el sistema contable local de forma síncrona y segura.
+
+### Solución Técnica
+
+Desarrollamos una pasarela de sincronización ligera y ultra-segura utilizando **Cloudflare Workers**. 
+- Escucha los webhooks de Stripe en tiempo real.
+- Valida la integridad del payload del webhook mediante esquemas de **Zod**.
+- Genera automáticamente facturas localizadas y sincroniza los asientos contables mediante llamadas a la API REST del ERP de contabilidad.
+- Envía confirmaciones personalizadas de facturación al usuario a través de **Resend** con firmas SPF/DKIM verificadas en el dominio corporativo del cliente.

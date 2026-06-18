@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Full-Stack & AI Automation Engineer",
+    "tagline": "Automating the future of work with Artificial Intelligence & scalable architectures.",
+    "description": "I help businesses optimize operations, automate workflows, and integrate AI to multiply productivity and reduce operational costs.",
+    "cta_projects": "View Projects",
+    "cta_contact": "Let's Talk Business"
+  },
+  "bento": {
+    "profile_title": "Jeshua Salazar",
+    "profile_subtitle": "AI & Automation Engineer",
+    "profile_bio": "I design software solutions focused on business ROI. Specialized in connecting large language models to databases and business workflows.",
+    "skills_title": "Core Capabilities",
+    "skills_automation": "Workflow Automation",
+    "skills_automation_desc": "Autonomous workflows that eliminate repetitive tasks and reduce human error to 0%.",
+    "skills_ai": "AI Integration",
+    "skills_ai_desc": "Autonomous agents, custom LLMs, and Retrieval-Augmented Generation (RAG) tailored to your business.",
+    "skills_fullstack": "Full-Stack Development",
+    "skills_fullstack_desc": "Ultra-fast, secure web interfaces built on top of robust serverless infrastructures.",
+    "stats_title": "Measurable Impact",
+    "stats_hours": "Hours Saved",
+    "stats_efficiency": "Operational Efficiency",
+    "stats_cost": "Cost Reduction"
+  },
+  "contact": {
+    "title": "Start a Collaboration",
+    "subtitle": "Tell me about your current bottleneck and let's design a solution.",
+    "name": "Full name",
+    "email": "Business email",
+    "organization": "Organization / Company (Optional)",
+    "projectType": "Project Type",
+    "projectType_placeholder": "Select an option",
+    "projectType_product": "Web Product Development",
+    "projectType_automation": "Process Automation",
+    "projectType_ia": "AI Integration / LLMs",
+    "projectType_colab": "Long-term Collaboration",
+    "projectType_other": "Other inquiry",
+    "message": "Project details (Problem, goals, approximate budget)",
+    "consent": "I agree to my data being processed to respond to this request.",
+    "submit": "Send Message",
+    "sending": "Sending...",
+    "success": "Message sent successfully! I will reply in less than 24 business hours.",
+    "error_invalid": "Please fill in all required fields with valid data.",
+    "error_bot": "Antispam verification failed. Please try again.",
+    "error_server": "Internal server error. Please email me directly at contacto@jeshuasalazar.com."
+  },
+  "footer": {
+    "rights": "All rights reserved.",
+    "privacy": "Privacy Policy",
+    "built_with": "Built with Next.js and Cloudflare"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "首页",
+    "projects": "项目",
+    "about": "关于我",
+    "contact": "联系我"
+  },
+  "hero": {
+    "role": "全栈与人工智能自动化工程师",
+    "tagline": "用人工智能和可扩展架构自动化工作的未来。",
+    "description": "我帮助企业优化运营、自动化工作流程并集成人工智能，以成倍提高生产力并降低运营成本。",
+    "cta_projects": "查看项目",
+    "cta_contact": "谈谈合作"
+  },
+  "bento": {
+    "profile_title": "Jeshua Salazar",
+    "profile_subtitle": "AI & Automation Engineer",
+    "profile_bio": "我设计专注于商业投资回报率（ROI）的 indicator 软件解决方案。专注于将大型语言模型连接到 database 和业务流程。",
+    "skills_title": "核心能力",
+    "skills_automation": "工作流自动化",
+    "skills_automation_desc": "自主工作流可消除重复性工作，并将人为错误降至 0%。",
+    "skills_ai": "人工智能集成",
+    "skills_ai_desc": "量身定制的自主代理、定制 LLM 和检索增强生成 (RAG) 系统。",
+    "skills_fullstack": "全栈开发",
+    "skills_fullstack_desc": "基于强大的无服务器基础设施构建的超快速、安全网页界面。",
+    "stats_title": "可衡量的影响",
+    "stats_hours": "节省的小时数",
+    "stats_efficiency": "运营效率",
+    "stats_cost": "运营成本降低"
+  },
+  "contact": {
+    "title": "开始合作",
+    "subtitle": "告诉我您目前的业务瓶颈，让我们共同设计解决方案。",
+    "name": "姓名",
+    "email": "工作电子邮箱",
+    "organization": "组织 / 公司 (可选)",
+    "projectType": "项目类型",
+    "projectType_placeholder": "请选择一个选项",
+    "projectType_product": "网页产品开发",
+    "projectType_automation": "流程自动化",
+    "projectType_ia": "人工智能集成 / 大型语言模型",
+    "projectType_colab": "长期合作",
+    "projectType_other": "其他咨询",
+    "message": "项目详情（问题、目标、大概预算）",
+    "consent": "我同意处理我的数据以响应此请求。",
+    "submit": "发送消息",
+    "sending": "发送中...",
+    "success": "消息发送成功！我将在 24 工作小时内回复您。",
+    "error_invalid": "请用有效数据填写所有必填字段。",
+    "error_bot": "防垃圾邮件验证失败。请重试。",
+    "error_server": "内部服务器错误。请直接发送电子邮件至 contacto@jeshuasalazar.com。"
+  },
+  "footer": {
+    "rights": "版权所有。",
+    "privacy": "隐私 Policy",
+    "built_with": "使用 Next.js 和 Cloudflare 构建"
+  }
+}

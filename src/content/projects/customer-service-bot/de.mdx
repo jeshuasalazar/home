@@ -1,0 +1,32 @@
+---
+title: "Intelligenter Kundenservice mit KI-Agenten"
+summary: "Integriertes System autonomer Agenten, das Support-E-Mails mit einer Kundenzufriedenheit von 92% löst."
+year: 2025
+status: published
+role: "Leitender Automatisierungsarchitekt"
+problem: "Der Kunde gab monatlich 40.000 $ für manuellen Kundenservice aus, bei Antwortzeiten von bis zu 24 Stunden."
+outcomes:
+  - "Reduzierung der Lösungszeit von 12 Stunden auf durchschnittlich 4 Minuten."
+  - "Vollständige Automatisierung von 80% der Standard-Tickets."
+  - "Direkte Einsparungen von 32.000 $/Monat bei den Betriebskosten."
+technologies:
+  - "Next.js"
+  - "Cloudflare Workers"
+  - "OpenAI API"
+  - "Pgvector"
+  - "PostgreSQL"
+featured: true
+order: 1
+updatedAt: "2026-06-17"
+---
+
+## Projektbeschreibung
+
+Das Hauptziel dieses Projekts bestand darin, ein automatisiertes Support-System zu entwerfen und zu implementieren, das nicht nur allgemeine Fragen beantwortet, sondern auch Aktionen im internen System des Unternehmens ausführen kann.
+
+### Technische Lösung
+
+Wir haben eine serverlose Architektur auf Basis von **Cloudflare Workers** implementiert, um minimale Kosten im Leerlauf und sofortige Skalierbarkeit zu gewährleisten. Das System verarbeitet eingehende E-Mails, erstellt eine Intent-Map, fragt die Datenbank des Unternehmens mittels semantischer Vektorsuche (RAG) ab und führt automatisierte Aktionen aus, wie:
+- Einfache Rechnungsrückerstattungen.
+- Passwort-Zurücksetzungen und Kontosperren aufheben.
+- Zuweisung komplexer Tickets an menschliche Support-Mitarbeiter.

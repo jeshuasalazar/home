@@ -1,0 +1,32 @@
+---
+title: "Support Client Intelligent avec Agents d'IA"
+summary: "Système intégré d'agents autonomes qui résout les e-mails de support avec 92% de satisfaction client."
+year: 2025
+status: published
+role: "Architecte d'Automatisation Principal"
+problem: "Le client dépensait 40 000 $/mois en files d'attente manuelles avec des délais de réponse allant jusqu'à 24 heures."
+outcomes:
+  - "Réduction du temps de résolution de 12 heures à 4 minutes en moyenne."
+  - "Automatisation complète de 80% des tickets standards."
+  - "Économie directe de 32 000 $/mois en coûts d'exploitation."
+technologies:
+  - "Next.js"
+  - "Cloudflare Workers"
+  - "OpenAI API"
+  - "Pgvector"
+  - "PostgreSQL"
+featured: true
+order: 1
+updatedAt: "2026-06-17"
+---
+
+## Description du Projet
+
+L'objectif principal de ce projet était de concevoir et de déployer un système de support automatisé capable non seulement de répondre aux questions génériques, mais également d'effectuer des actions directement dans l'outil de gestion interne de l'entreprise.
+
+### Solution Technique
+
+Nous avons implémenté une architecture serverless basée sur **Cloudflare Workers** pour garantir un coût nul en période d'inactivité et une scalabilité instantanée. Le système traite les e-mails entrants, génère une carte des intentions, consulte la base de données interne via des recherches vectorielles sémantiques (RAG) et effectue des actions automatisées comme :
+- Le remboursement de factures simples.
+- La réinitialisation de mots de passe et le déverrouillage de comptes.
+- L'escalade des tickets complexes vers des agents humains.

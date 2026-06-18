@@ -1,0 +1,58 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À Propos",
+    "contact": "Contact"
+  },
+  "hero": {
+    "role": "Ingénieur Full-Stack & Automatisation IA",
+    "tagline": "Automatiser l'avenir du travail avec l'Intelligence Artificielle et des architectures évolutives.",
+    "description": "J'aide les entreprises à optimiser leurs opérations, automatiser leurs flux de travail et intégrer l'IA pour démultiplier leur productivité et réduire leurs coûts opérationnels.",
+    "cta_projects": "Voir les Projets",
+    "cta_contact": "Parlons Affaires"
+  },
+  "bento": {
+    "profile_title": "Jeshua Salazar",
+    "profile_subtitle": "AI & Automation Engineer",
+    "profile_bio": "Je conçois des solutions logicielles axées sur le ROI des entreprises. Spécialisé dans la connexion de modèles de langage aux bases de données et aux processus métier.",
+    "skills_title": "Compétences Clés",
+    "skills_automation": "Automatisation des Processus",
+    "skills_automation_desc": "Flux de travail autonomes qui éliminent les tâches répétitives et réduisent l'erreur humaine à 0 %.",
+    "skills_ai": "Intégration de l'IA",
+    "skills_ai_desc": "Agents autonomes, LLM personnalisés et génération augmentée de récupération (RAG) adaptés à votre entreprise.",
+    "skills_fullstack": "Développement Full-Stack",
+    "skills_fullstack_desc": "Interfaces web ultra-rapides et sécurisées basées sur des infrastructures serverless robustes.",
+    "stats_title": "Impact Mesurable",
+    "stats_hours": "Heures Économisées",
+    "stats_efficiency": "Efficacité Opérationnelle",
+    "stats_cost": "Réduction des Coûts"
+  },
+  "contact": {
+    "title": "Démarrer une Collaboration",
+    "subtitle": "Parlez-moi de votre goulot d'étranglement actuel et concevons une solution.",
+    "name": "Nom complet",
+    "email": "Adresse e-mail professionnelle",
+    "organization": "Organisation / Entreprise (Optionnel)",
+    "projectType": "Type de projet",
+    "projectType_placeholder": "Sélectionnez une option",
+    "projectType_product": "Développement de Produit Web",
+    "projectType_automation": "Automatisation de Processus",
+    "projectType_ia": "Intégration d'IA / LLMs",
+    "projectType_colab": "Collaboration à Long Terme",
+    "projectType_other": "Autre demande",
+    "message": "Détails du projet (Problème, objectifs, budget approximatif)",
+    "consent": "J'accepte que mes données soient traitées pour répondre à cette demande.",
+    "submit": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès ! Je vous répondrai en moins de 24 heures ouvrables.",
+    "error_invalid": "Veuillez remplir tous les champs obligatoires avec des données valides.",
+    "error_bot": "La vérification anti-spam a échoué. Veuillez réessayer.",
+    "error_server": "Erreur interne du serveur. Veuillez me contacter directement à contacto@jeshuasalazar.com."
+  },
+  "footer": {
+    "rights": "Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "built_with": "Conçu avec Next.js et Cloudflare"
+  }
+}
