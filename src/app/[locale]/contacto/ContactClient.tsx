@@ -46,7 +46,7 @@ export default function ContactClient({ dict, locale }: ContactClientProps) {
       if ((window as any).turnstile) {
         try {
           const widgetId = (window as any).turnstile.render("#turnstile-container", {
-            sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "0x4AAAAAAAxx-XXXXXX-XXXXX", // Fallback test key
+            sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA", // Fallback test key (always passes)
             callback: (token: string) => {
               setTurnstileToken(token);
             },

@@ -48,7 +48,7 @@
     "success": "Nachricht erfolgreich gesendet! Ich werde Ihnen innerhalb von 24 Geschäftsstunden antworten.",
     "error_invalid": "Bitte füllen Sie alle Pflichtfelder mit gültigen Daten aus.",
     "error_bot": "Die Antispam-Überprüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "error_server": "Interner Serverfehler. Bitte senden Sie mir direkt eine E-Mail an contacto@jeshuasalazar.com."
+    "error_server": "Interner Serverfehler. Bitte senden Sie mir direkt eine E-Mail an hola@jeshuasalazar.com."
   },
   "footer": {
     "rights": "Alle Rechte vorbehalten.",

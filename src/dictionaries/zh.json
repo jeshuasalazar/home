@@ -48,7 +48,7 @@
     "success": "消息发送成功！我将在 24 工作小时内回复您。",
     "error_invalid": "请用有效数据填写所有必填字段。",
     "error_bot": "防垃圾邮件验证失败。请重试。",
-    "error_server": "内部服务器错误。请直接发送电子邮件至 contacto@jeshuasalazar.com。"
+    "error_server": "内部服务器错误。请直接发送电子邮件至 hola@jeshuasalazar.com。"
   },
   "footer": {
     "rights": "版权所有。",

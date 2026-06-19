@@ -48,7 +48,7 @@
     "success": "¡Mensaje enviado con éxito! Te responderé en menos de 24 horas hábiles.",
     "error_invalid": "Por favor, completa todos los campos requeridos con datos válidos.",
     "error_bot": "La verificación antispam ha fallado. Inténtalo de nuevo.",
-    "error_server": "Error interno del servidor. Por favor, escríbeme directamente a contacto@jeshuasalazar.com."
+    "error_server": "Error interno del servidor. Por favor, escríbeme directamente a hola@jeshuasalazar.com."
   },
   "footer": {
     "rights": "Todos los derechos reservados.",

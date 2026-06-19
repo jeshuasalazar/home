@@ -48,7 +48,7 @@
     "success": "Message sent successfully! I will reply in less than 24 business hours.",
     "error_invalid": "Please fill in all required fields with valid data.",
     "error_bot": "Antispam verification failed. Please try again.",
-    "error_server": "Internal server error. Please email me directly at contacto@jeshuasalazar.com."
+    "error_server": "Internal server error. Please email me directly at hola@jeshuasalazar.com."
   },
   "footer": {
     "rights": "All rights reserved.",

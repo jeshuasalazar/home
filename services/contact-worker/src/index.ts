@@ -100,8 +100,8 @@ export default {
         });
       }
 
-      const toEmail = env.CONTACT_TO || "contacto@jeshuasalazar.com";
-      const fromEmail = env.CONTACT_FROM || "contacto@jeshuasalazar.com";
+      const toEmail = env.CONTACT_TO || "hola@jeshuasalazar.com";
+      const fromEmail = env.CONTACT_FROM || "hola@jeshuasalazar.com";
 
       const emailSubject = `Nuevo Lead: [${body.projectType.toUpperCase()}] - ${body.name}`;
       const emailHtml = `
