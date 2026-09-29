@@ -1,58 +1,219 @@
 {
+  "meta": {
+    "title": "Jeshua Salazar · Equipos de agentes de IA para tu negocio",
+    "description": "Diseño, despliego y enseño a dirigir equipos de agentes de IA que operan tu negocio. Agenda una llamada de diagnóstico sin costo o una sesión estratégica 1:1."
+  },
   "nav": {
     "home": "Inicio",
-    "projects": "Proyectos",
-    "about": "Sobre Mí",
-    "contact": "Contacto"
+    "philosophy": "Filosofía",
+    "services": "Servicios",
+    "ailearning": "aiLearning",
+    "projects": "Casos",
+    "about": "Sobre mí",
+    "contact": "Contacto",
+    "book": "Agendar",
+    "menu": "Menú"
   },
   "hero": {
-    "role": "Ingeniero Full-Stack y Automatización de IA",
-    "tagline": "Automatizando el futuro del trabajo con Inteligencia Artificial y arquitecturas escalables.",
-    "description": "Ayudo a las empresas a optimizar sus operaciones, automatizar flujos de trabajo e integrar IA para multiplicar su productividad y reducir costes operativos.",
-    "cta_projects": "Ver Proyectos",
-    "cta_contact": "Hablemos de Negocios"
+    "role": "Arquitecto de equipos de agentes de IA",
+    "title_a": "Tu próximo empleado",
+    "title_b": "es un agente.",
+    "description": "Diseño y pongo a trabajar equipos de agentes de IA dentro de tu negocio, y enseño a tu gente a dirigirlos. Tú te quedas con lo que solo una persona puede hacer.",
+    "cta_book": "Agenda una llamada",
+    "cta_services": "Cómo puedo ayudarte",
+    "note": "Primera llamada de 20 min, sin costo.",
+    "cta_contact": "Agenda una llamada",
+    "cta_projects": "Ver casos",
+    "scroll": "Desliza"
+  },
+  "manifesto": {
+    "kicker": "Filosofía",
+    "text": "La IA no viene a quitarte el trabajo. Viene a quitarte el trabajo que nunca debiste estar haciendo.",
+    "principles": [
+      {
+        "title": "Agentes, no herramientas",
+        "desc": "Un chatbot responde. Un agente tiene un rol, un responsable y resultados que se miden cada semana."
+      },
+      {
+        "title": "Personas al mando",
+        "desc": "Los agentes ejecutan; tu equipo decide. Diseño cada flujo para que una persona revise lo que importa."
+      },
+      {
+        "title": "Resultados, no demos",
+        "desc": "Si no ahorra horas, no reduce errores o no vende más, no se implementa. Así de simple."
+      }
+    ]
+  },
+  "team": {
+    "kicker": "Tu nuevo equipo",
+    "title": "Cinco roles que no duermen.",
+    "subtitle": "Así se ve un equipo de agentes trabajando en una empresa real. Empezamos por el rol que más horas te devuelve.",
+    "roles": [
+      { "name": "Ventas", "does": "Califica prospectos, da seguimiento y agenda reuniones mientras duermes." },
+      { "name": "Contenido", "does": "Convierte una idea en publicaciones, correos y guiones con tu voz." },
+      { "name": "Soporte", "does": "Responde a tus clientes en minutos y escala solo lo que necesita a una persona." },
+      { "name": "Finanzas", "does": "Concilia, cobra y te avisa antes de que un número se salga de control." },
+      { "name": "Calidad", "does": "Revisa el trabajo de los demás agentes antes de que llegue a tu cliente." }
+    ]
+  },
+  "proof": {
+    "kicker": "Resultados",
+    "title": "Lo he hecho antes. En organizaciones grandes y en equipos pequeños.",
+    "items": [
+      { "value": "−66%", "label": "de carga operativa con IA generativa en la documentación del proyecto SIMOP", "source": "PEMEX corporativo" },
+      { "value": "−80%", "label": "de tiempo en la gestión de prospectos al automatizar el pipeline de ventas", "source": "aiLearning" },
+      { "value": "3 + IA", "label": "personas y un equipo de agentes operan una plataforma completa de educación", "source": "aiLearning" },
+      { "value": "+2,000", "label": "personas por audiencia en tres ediciones como líder y embajador", "source": "Talent Land" }
+    ]
+  },
+  "services": {
+    "kicker": "Servicios",
+    "title": "Tres maneras de empezar.",
+    "subtitle": "Elige según dónde estás hoy. Todas empiezan con claridad sobre qué automatizar primero.",
+    "from": "Desde",
+    "featured": "Más elegida",
+    "items": [
+      {
+        "id": "diagnostico",
+        "name": "Llamada de diagnóstico",
+        "duration": "20 min · videollamada",
+        "desc": "Hablamos de tu operación y te digo con honestidad si un agente puede ayudarte, y por dónde empezar.",
+        "includes": ["Un proceso candidato a automatizar", "Siguiente paso claro", "Sin compromiso"],
+        "cta": "Agendar sin costo"
+      },
+      {
+        "id": "estrategia",
+        "name": "Sesión estratégica 1:1",
+        "duration": "90 min · videollamada + entregable",
+        "desc": "Trabajamos tu caso a fondo y sales con el mapa de tu equipo de agentes: qué procesos, con qué herramientas, en qué orden y cuánto ahorras.",
+        "includes": ["Mapa de agentes para tu negocio", "Estimación de horas y costo ahorrados", "Plan de 30 días", "Grabación y resumen escrito"],
+        "cta": "Reservar sesión"
+      },
+      {
+        "id": "implementacion",
+        "name": "Equipo de agentes a la medida",
+        "duration": "Proyecto · 4 a 8 semanas",
+        "desc": "Diseño, construyo y conecto tus agentes a tus sistemas. Entrego funcionando, documentado y con tu equipo capacitado para dirigirlo.",
+        "includes": ["Agentes en producción", "Integración con tus herramientas", "Capacitación del equipo", "Acompañamiento post-lanzamiento"],
+        "cta": "Solicitar propuesta"
+      }
+    ],
+    "extra_title": "Conferencias y talleres para empresas",
+    "extra_desc": "“Tu próximo empleado es un agente”: una conferencia práctica donde construimos en vivo la operación de un negocio con agentes de IA.",
+    "extra_cta": "Invitarme a tu evento"
+  },
+  "method": {
+    "kicker": "Método",
+    "title": "De la idea al agente en producción.",
+    "steps": [
+      { "name": "Diagnóstico", "desc": "Encontramos el proceso que más horas consume y más fácil es de delegar." },
+      { "name": "Diseño", "desc": "Definimos el rol del agente, sus herramientas, sus límites y quién lo supervisa." },
+      { "name": "Despliegue", "desc": "Lo construyo, lo conecto a tus sistemas y medimos desde el primer día." },
+      { "name": "Dominio", "desc": "Tu equipo aprende a dirigirlo y a crear los siguientes. Sin dependencia." }
+    ]
+  },
+  "ailearning": {
+    "kicker": "aiLearning",
+    "title": "Y cuando tu equipo quiera dominarlo.",
+    "motto": "No aprendas IA. Domínala.",
+    "desc": "Cofundé aiLearning, la plataforma de aprendizaje de inteligencia artificial hecha en México. Clases en vivo y proyectos reales en cinco niveles, de descubrir la IA a liderar sistemas autónomos.",
+    "levels": ["Descubre", "Construye", "Automatiza", "Diseña", "Lidera"],
+    "cta": "Conoce aiLearning",
+    "cta_teams": "Formación para tu empresa"
+  },
+  "about": {
+    "kicker": "Quién soy",
+    "title": "Jeshua Salazar",
+    "role": "Cofundador y Director Tecnológico de aiLearning",
+    "bio": "Soy licenciado en Negocios Digitales por el Instituto Politécnico Nacional. Llevé la IA generativa a PEMEX corporativo, fui embajador de Talent Land frente a miles de personas y hoy opero una plataforma completa con un equipo de tres personas y un equipo de agentes. Mi misión: que cada profesional y cada empresa integre a los agentes de IA como sus nuevos empleados.",
+    "creds": ["IPN", "PEMEX", "Talent Land", "IA agéntica · Vanderbilt", "IA para negocios · Wharton", "Instructor EC0217 · CONOCER"],
+    "cta": "Semblanza completa",
+    "stage": "En escena"
+  },
+  "faq": {
+    "kicker": "Preguntas frecuentes",
+    "items": [
+      { "q": "¿Necesito saber programar?", "a": "No. Tú conoces tu negocio; yo me encargo de la parte técnica y te enseño a dirigir a los agentes con lenguaje natural." },
+      { "q": "¿Mi empresa es muy pequeña para esto?", "a": "Al contrario. Los equipos pequeños son los que más ganan: un agente bien diseñado equivale a sumar horas de trabajo sin sumar nómina." },
+      { "q": "¿Qué pasa con la información de mi empresa?", "a": "Cada agente accede solo a lo que necesita, con permisos mínimos y una persona responsable. La seguridad se diseña desde el primer día." },
+      { "q": "¿Trabajas fuera de México?", "a": "Sí. Todo el trabajo puede hacerse en remoto, en español o en inglés." }
+    ]
+  },
+  "final": {
+    "title": "La puerta ya está abierta.",
+    "subtitle": "Veinte minutos bastan para saber si un agente puede cambiar tu semana.",
+    "cta": "Agenda tu llamada",
+    "or": "o escríbeme a"
+  },
+  "booking": {
+    "title": "Agenda con Jeshua",
+    "subtitle": "Elige cómo quieres empezar. Te confirmo en menos de 24 horas hábiles.",
+    "close": "Cerrar",
+    "free": "Sin costo",
+    "fallback": "¿Prefieres escribirme?"
   },
   "bento": {
-    "profile_title": "Jeshua Salazar",
-    "profile_subtitle": "AI & Automation Engineer",
-    "profile_bio": "Diseño soluciones de software enfocadas en retorno de inversión. Especializado en conectar modelos de lenguaje a bases de datos y flujos de negocio.",
-    "skills_title": "Capacidades Clave",
-    "skills_automation": "Automatización de Procesos",
-    "skills_automation_desc": "Flujos de trabajo autónomos que eliminan tareas repetitivas y reducen el error humano al 0%.",
-    "skills_ai": "Integración de IA",
-    "skills_ai_desc": "Agentes autónomos, LLMs y sistemas de recuperación de información (RAG) adaptados a tu negocio.",
-    "skills_fullstack": "Desarrollo Full-Stack",
-    "skills_fullstack_desc": "Interfaces web ultra-rápidas y seguras construidas sobre infraestructuras serverless robustas.",
-    "stats_title": "Impacto Medible",
-    "stats_hours": "Horas Ahorradas",
-    "stats_efficiency": "Eficiencia Operativa",
-    "stats_cost": "Reducción de Costes"
+    "profile_title": "Jeshua Salazar"
   },
   "contact": {
-    "title": "Iniciar una Colaboración",
-    "subtitle": "Cuéntame sobre tu cuello de botella actual y diseñemos una solución.",
+    "title": "Hablemos de tu operación",
+    "subtitle": "Cuéntame qué proceso te quita más tiempo. Te respondo en menos de 24 horas hábiles con un siguiente paso concreto.",
     "name": "Nombre completo",
-    "email": "Correo electrónico corporativo",
-    "organization": "Organización / Empresa (Opcional)",
-    "projectType": "Tipo de proyecto",
+    "email": "Correo electrónico",
+    "organization": "Empresa (opcional)",
+    "projectType": "¿Qué te interesa?",
     "projectType_placeholder": "Selecciona una opción",
-    "projectType_product": "Desarrollo de Producto Web",
-    "projectType_automation": "Automatización de Procesos",
-    "projectType_ia": "Integración de IA / Modelos de Lenguaje",
-    "projectType_colab": "Colaboración a Largo Plazo",
-    "projectType_other": "Otro tipo de consulta",
-    "message": "Detalles del proyecto (Problema, objetivos, presupuesto aproximado)",
+    "projectType_diagnostico": "Llamada de diagnóstico (20 min, sin costo)",
+    "projectType_estrategia": "Sesión estratégica 1:1",
+    "projectType_implementacion": "Equipo de agentes a la medida",
+    "projectType_formacion": "Formación para mi equipo (aiLearning)",
+    "projectType_conferencia": "Conferencia o taller",
+    "projectType_other": "Otro tema",
+    "message": "¿Qué proceso te gustaría delegar a un agente? Incluye tu disponibilidad para la llamada.",
     "consent": "Acepto que mis datos se procesen para responder a esta solicitud.",
-    "submit": "Enviar Mensaje",
+    "submit": "Enviar solicitud",
     "sending": "Enviando...",
-    "success": "¡Mensaje enviado con éxito! Te responderé en menos de 24 horas hábiles.",
+    "success": "¡Listo! Recibí tu solicitud. Te respondo en menos de 24 horas hábiles.",
     "error_invalid": "Por favor, completa todos los campos requeridos con datos válidos.",
-    "error_bot": "La verificación antispam ha fallado. Inténtalo de nuevo.",
-    "error_server": "Error interno del servidor. Por favor, escríbeme directamente a hola@jeshuasalazar.com."
+    "error_bot": "La verificación antispam falló. Inténtalo de nuevo.",
+    "error_server": "Algo falló de nuestro lado. Escríbeme directamente a hola@jeshuasalazar.com.",
+    "direct": "Contacto directo"
+  },
+  "aboutPage": {
+    "kicker": "Sobre mí",
+    "title": "Construyo equipos donde las personas dirigen y los agentes ejecutan.",
+    "paragraphs": [
+      "Soy cofundador y Director Tecnológico de aiLearning Innovación y Desarrollo Educativo, donde diseño infraestructura de inteligencia artificial y modelos Agent-as-a-Service para empresas y profesionales. Soy licenciado en Negocios Digitales y técnico en Sistemas Digitales por el Instituto Politécnico Nacional; mi tesis estudió cómo la IA optimiza las ventas digitales en el Social Commerce.",
+      "aiLearning es la plataforma de aprendizaje de inteligencia artificial hecha en México. Su premisa es “No aprendas IA. Domínala.”: formación práctica, con clases en vivo y proyectos reales, en cinco niveles que van de Nexo (descubrir) a Zenit (liderar sistemas autónomos). Desde 2024 lidero la construcción de la plataforma y su academia, donde un equipo de tres personas trabaja con agentes de IA como parte del equipo. Del lado comercial, dirigí la estrategia de Social Commerce que llenó nuestros eventos en sedes como CANACO y AMCP, y automaticé el pipeline de ventas con IA, lo que redujo hasta un 80 % el tiempo de gestión de prospectos.",
+      "En PEMEX corporativo usé IA generativa para escribir las historias de usuario del proyecto de trazabilidad SIMOP y bajé un 66 % la carga operativa del equipo; también diseñé tableros de Power BI para la dirección. Durante tres años fui líder de comunidad y embajador de Talent Land, uno de los eventos de tecnología más grandes de Latinoamérica, frente a audiencias de más de 2,000 personas. Antes gestioné un fondo privado de inversión."
+    ],
+    "factsTitle": "En corto",
+    "facts": [
+      { "k": "Rol actual", "v": "Cofundador y Director Tecnológico · aiLearning" },
+      { "k": "Formación", "v": "Lic. en Negocios Digitales y Técnico en Sistemas Digitales · IPN" },
+      { "k": "Impacto corporativo", "v": "PEMEX: −66 % de carga operativa con IA generativa" },
+      { "k": "Escenarios", "v": "Talent Land (+2,000 personas), CANACO, AMCP" },
+      { "k": "Idiomas", "v": "Español, inglés (C1), francés (B1), alemán básico" }
+    ],
+    "certsTitle": "Certificaciones",
+    "certs": ["IA agéntica · Vanderbilt", "IA para negocios · Wharton", "Salesforce Agentforce", "Power BI", "Inbound · HubSpot", "Instructor EC0217 · CONOCER-SEP"],
+    "cta": "Trabajemos juntos"
+  },
+  "cases": {
+    "kicker": "Casos",
+    "title": "Casos reales, resultados medibles.",
+    "subtitle": "Proyectos donde la IA dejó de ser una demo y se volvió parte del equipo.",
+    "role_label": "Rol:",
+    "outcomes_label": "Resultados",
+    "problem_label": "Reto",
+    "tech_label": "Herramientas",
+    "back": "Volver a casos",
+    "read": "Ver caso"
   },
   "footer": {
+    "tagline": "Los agentes de IA son los nuevos empleados.",
     "rights": "Todos los derechos reservados.",
-    "privacy": "Política de Privacidad",
-    "built_with": "Construido con Next.js y Cloudflare"
+    "privacy": "Privacidad",
+    "built_with": "Hecho en México"
   }
 }

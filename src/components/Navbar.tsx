@@ -2,124 +2,116 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Locale } from "@/lib/i18n";
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 interface NavbarProps {
+  locale: string;
   dict: {
-    home: string;
+    philosophy: string;
+    services: string;
+    ailearning: string;
     projects: string;
     about: string;
-    contact: string;
+    book: string;
+    menu: string;
   };
 }
 
-export default function Navbar({ dict }: NavbarProps) {
+export default function Navbar({ locale, dict }: NavbarProps) {
   const pathname = usePathname();
-  const currentLocale = (pathname.split("/")[1] || "en") as Locale;
+  const [scrolled, setScrolled] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+  const [open, setOpen] = useState(false);
 
-  // Function to build localized path
-  const localizedPath = (path: string) => {
-    return `/${currentLocale}${path}`;
-  };
+  useEffect(() => {
+    const onScroll = () => {
+      setScrolled(window.scrollY > 24);
+      setPastHero(window.scrollY > window.innerHeight * 0.8);
+    };
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
-  // Check if link is active
-  const isActive = (path: string) => {
-    const fullPath = localizedPath(path);
-    if (path === "") {
-      return pathname === `/${currentLocale}` || pathname === `/${currentLocale}/`;
-    }
-    return pathname.startsWith(fullPath);
-  };
+  // Cierra el menú al navegar
+  // biome-ignore lint/correctness/useExhaustiveDependencies: se reinicia por ruta
+  useEffect(() => setOpen(false), [pathname]);
 
-  const navItems = [
-    { name: dict.home, path: "" },
-    { name: dict.projects, path: "/proyectos" },
-    { name: dict.about, path: "/sobre-mi" },
-    { name: dict.contact, path: "/contacto" },
+  const home = `/${locale}`;
+  const items = [
+    { name: dict.philosophy, href: `${home}#filosofia` },
+    { name: dict.services, href: `${home}#servicios` },
+    { name: dict.ailearning, href: `${home}#ailearning` },
+    { name: dict.projects, href: `${home}/proyectos` },
+    { name: dict.about, href: `${home}/sobre-mi` },
   ];
 
   return (
-    <header className="sticky top-0 z-40 w-full border-b border-white/[0.06] bg-black/60 backdrop-blur-xl">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
-          {/* Logo / Branding */}
-          <div className="flex items-center">
-            <Link
-              href={localizedPath("")}
-              className="text-sm font-semibold tracking-wider text-white hover:opacity-80 transition-opacity uppercase font-sans"
-            >
-              Jeshua Salazar
-            </Link>
-          </div>
+    <>
+      <header className="fixed inset-x-0 top-0 z-50 px-3 pt-3 sm:px-5 sm:pt-4">
+        <div
+          data-scrolled={scrolled || open}
+          className="nav-pill mx-auto flex h-14 max-w-6xl items-center justify-between gap-2 rounded-full ps-4 pe-1.5 sm:gap-4 sm:ps-5 sm:pe-2"
+        >
+          <Link href={home} className="flex items-center gap-2.5 whitespace-nowrap text-[0.95rem] font-semibold tracking-tight" aria-label="Jeshua Salazar">
+            <span className="orb breathe" style={{ "--c": "var(--color-glow)" } as React.CSSProperties} aria-hidden="true" />
+            Jeshua Salazar
+          </Link>
 
-          {/* Navigation links */}
-          <nav className="hidden md:flex items-center gap-6">
-            {navItems.map((item) => (
-              <Link
-                key={item.path}
-                href={item.path === "" ? localizedPath("") : localizedPath(item.path)}
-                className={`text-xs font-medium uppercase tracking-wider transition-colors duration-300 ${
-                  isActive(item.path)
-                    ? "text-white border-b-2 border-white/80 pb-1 pt-1.5"
-                    : "text-zinc-400 hover:text-white"
-                }`}
-              >
-                {item.name}
+          <nav className="hidden items-center gap-7 lg:flex" aria-label="Principal">
+            {items.map((it) => (
+              <Link key={it.href} href={it.href} className="text-sm text-[var(--color-mute)] transition-colors hover:text-white">
+                {it.name}
               </Link>
             ))}
           </nav>
 
-          {/* Right side controls */}
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-1.5">
             <LanguageSwitcher />
-            
-            {/* Mobile menu trigger button */}
+            <a href={`${home}#servicios`} data-open-booking className="btn btn-light hidden !min-h-10 !px-4 text-sm sm:inline-flex">
+              {dict.book}
+            </a>
             <button
               type="button"
-              className="md:hidden p-1.5 text-zinc-400 hover:text-white rounded-lg hover:bg-white/5 transition-colors cursor-pointer"
-              onClick={() => {
-                const mobileNav = document.getElementById("mobile-nav");
-                mobileNav?.classList.toggle("hidden");
-              }}
-              aria-label="Toggle navigation menu"
+              className="grid size-10 place-items-center rounded-full text-[var(--color-mute)] transition hover:text-white lg:hidden"
+              onClick={() => setOpen((v) => !v)}
+              aria-expanded={open}
+              aria-controls="menu-movil"
+              aria-label={dict.menu}
             >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="w-5 h-5"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+              <svg viewBox="0 0 24 24" className="size-5" fill="none" stroke="currentColor" strokeWidth="1.6" aria-hidden="true">
+                {open ? (
+                  <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
+                ) : (
+                  <path d="M4 9h16M4 15h16" strokeLinecap="round" />
+                )}
               </svg>
             </button>
           </div>
         </div>
-      </div>
 
-      {/* Mobile navigation menu */}
-      <div id="mobile-nav" className="hidden md:hidden border-b border-white/[0.06] bg-zinc-950/95 backdrop-blur-xl animate-in slide-in-from-top duration-300">
-        <div className="space-y-1 px-4 py-3">
-          {navItems.map((item) => (
-            <Link
-              key={item.path}
-              href={item.path === "" ? localizedPath("") : localizedPath(item.path)}
-              onClick={() => {
-                document.getElementById("mobile-nav")?.classList.add("hidden");
-              }}
-              className={`block px-3 py-2 text-sm font-medium rounded-md transition-colors ${
-                isActive(item.path)
-                  ? "bg-white/10 text-white"
-                  : "text-zinc-400 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {item.name}
+        <nav
+          id="menu-movil"
+          hidden={!open}
+          className="mx-auto mt-2 max-w-6xl rounded-[1.75rem] border border-[var(--hairline)] bg-[color-mix(in_oklch,var(--color-ink-2)_92%,transparent)] p-3 backdrop-blur-2xl lg:hidden"
+          aria-label={dict.menu}
+        >
+          {items.map((it) => (
+            <Link key={it.href} href={it.href} onClick={() => setOpen(false)} className="block rounded-2xl px-4 py-3.5 text-lg tracking-tight transition hover:bg-white/5">
+              {it.name}
             </Link>
           ))}
-        </div>
+        </nav>
+      </header>
+
+      {/* Botón fijo en móvil: agendar siempre a un toque */}
+      <div data-visible={pastHero && !open} className="mobile-cta fixed inset-x-0 bottom-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:hidden">
+        <a href={`${home}#servicios`} data-open-booking className="btn btn-light w-full shadow-2xl shadow-black/60">
+          {dict.book}
+          <span className="arrow" aria-hidden="true">→</span>
+        </a>
       </div>
-    </header>
+    </>
   );
 }

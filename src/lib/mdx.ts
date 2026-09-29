@@ -9,7 +9,7 @@ export const ProjectFrontmatterSchema = z.object({
   title: z.string(),
   slug: z.string(),
   summary: z.string(),
-  year: z.number(),
+  year: z.number().optional(),
   status: ProjectStatusSchema,
   role: z.string(),
   problem: z.string(),
@@ -108,6 +108,15 @@ export function parseFrontmatter(fileContent: string): { data: Record<string, an
   return { data, content };
 }
 
+// Usa la traducción del caso si existe; si no, inglés y luego español.
+function resolveMdx(slug: string, locale: Locale): string | null {
+  for (const l of [locale, "en", "es"]) {
+    const p = path.join(CONTENT_PATH, slug, `${l}.mdx`);
+    if (fs.existsSync(p)) return p;
+  }
+  return null;
+}
+
 // Get all projects for a specific locale
 export function getProjects(locale: Locale): Project[] {
   if (!fs.existsSync(CONTENT_PATH)) {
@@ -121,9 +130,8 @@ export function getProjects(locale: Locale): Project[] {
     const dirPath = path.join(CONTENT_PATH, slug);
     if (!fs.statSync(dirPath).isDirectory()) continue;
 
-    // Check if localized file exists
-    const mdxPath = path.join(dirPath, `${locale}.mdx`);
-    if (!fs.existsSync(mdxPath)) continue;
+    const mdxPath = resolveMdx(slug, locale);
+    if (!mdxPath) continue;
 
     try {
       const fileContent = fs.readFileSync(mdxPath, "utf8");
@@ -152,14 +160,14 @@ export function getProjects(locale: Locale): Project[] {
     if (a.frontmatter.order !== b.frontmatter.order) {
       return a.frontmatter.order - b.frontmatter.order;
     }
-    return b.frontmatter.year - a.frontmatter.year;
+    return (b.frontmatter.year ?? 0) - (a.frontmatter.year ?? 0);
   });
 }
 
 // Get single project by slug and locale
 export function getProjectBySlug(slug: string, locale: Locale): Project | null {
-  const mdxPath = path.join(CONTENT_PATH, slug, `${locale}.mdx`);
-  if (!fs.existsSync(mdxPath)) return null;
+  const mdxPath = resolveMdx(slug, locale);
+  if (!mdxPath) return null;
 
   try {
     const fileContent = fs.readFileSync(mdxPath, "utf8");

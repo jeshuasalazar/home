@@ -1,37 +1,39 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
-import { motion } from "framer-motion";
-import { Locale } from "@/lib/i18n";
-import GlassCard from "@/components/GlassCard";
+import type React from "react";
+import { useEffect, useRef, useState } from "react";
+import type { Dictionary, Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
 
 interface ContactClientProps {
-  dict: any;
+  dict: Dictionary;
   locale: Locale;
 }
 
-export default function ContactClient({ dict, locale }: ContactClientProps) {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    organization: "",
-    projectType: "",
-    message: "",
-    consent: false,
-    website: "", // Honeypot
-  });
+type Turnstile = {
+  render: (el: string, opts: { sitekey: string; theme?: string; callback: (t: string) => void }) => string;
+  reset: (id: string) => void;
+  remove: (id: string) => void;
+};
+const turnstile = () => (window as unknown as { turnstile?: Turnstile }).turnstile;
 
-  const [status, setStatus] = useState<{
-    type: "idle" | "sending" | "success" | "error_invalid" | "error_bot" | "error_server";
-    message?: string;
-  }>({ type: "idle" });
+const TYPES = ["diagnostico", "estrategia", "implementacion", "formacion", "conferencia", "other"] as const;
 
-  const turnstileWidgetId = useRef<string | null>(null);
-  const [turnstileToken, setTurnstileToken] = useState<string>("");
+export default function ContactClient({ dict }: ContactClientProps) {
+  const c = dict.contact;
+  const empty = { name: "", email: "", organization: "", projectType: "", message: "", consent: false, website: "" };
+  const [formData, setFormData] = useState(empty);
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error_invalid" | "error_bot" | "error_server">("idle");
+  const widgetId = useRef<string | null>(null);
+  const [token, setToken] = useState("");
 
-  // Load Turnstile Script on mount
+  // Preselecciona el tipo cuando se llega desde un botón (?tipo=estrategia)
   useEffect(() => {
-    // Check if script is already loaded
+    const tipo = new URLSearchParams(window.location.search).get("tipo");
+    if (tipo && (TYPES as readonly string[]).includes(tipo)) setFormData((p) => ({ ...p, projectType: tipo }));
+  }, []);
+
+  useEffect(() => {
     if (!document.getElementById("cloudflare-turnstile-script")) {
       const script = document.createElement("script");
       script.id = "cloudflare-turnstile-script";
@@ -40,37 +42,40 @@ export default function ContactClient({ dict, locale }: ContactClientProps) {
       script.defer = true;
       document.body.appendChild(script);
     }
-
-    // Initialize turnstile widget once script is loaded
-    const initTurnstile = () => {
-      if ((window as any).turnstile) {
-        try {
-          const widgetId = (window as any).turnstile.render("#turnstile-container", {
-            sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA", // Fallback test key (always passes)
-            callback: (token: string) => {
-              setTurnstileToken(token);
-            },
-          });
-          turnstileWidgetId.current = widgetId;
-        } catch (err) {
-          console.error("Turnstile render error:", err);
-        }
-      } else {
-        setTimeout(initTurnstile, 500);
+    let timer: ReturnType<typeof setTimeout>;
+    const init = () => {
+      const ts = turnstile();
+      if (!ts) {
+        timer = setTimeout(init, 500);
+        return;
+      }
+      try {
+        widgetId.current = ts.render("#turnstile-container", {
+          sitekey: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY || "1x00000000000000000000AA",
+          theme: "dark",
+          callback: setToken,
+        });
+      } catch (err) {
+        console.error("Turnstile render error:", err);
       }
     };
-
-    initTurnstile();
-
+    init();
     return () => {
-      // Clean up widget if needed
-      if (turnstileWidgetId.current && (window as any).turnstile) {
+      clearTimeout(timer);
+      if (widgetId.current) {
         try {
-          (window as any).turnstile.remove(turnstileWidgetId.current);
-        } catch (e) {}
+          turnstile()?.remove(widgetId.current);
+        } catch {}
       }
     };
   }, []);
+
+  const resetTurnstile = () => {
+    if (widgetId.current) {
+      turnstile()?.reset(widgetId.current);
+      setToken("");
+    }
+  };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value, type } = e.target;
@@ -80,279 +85,130 @@ export default function ContactClient({ dict, locale }: ContactClientProps) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    // Reset status
-    setStatus({ type: "idle" });
-
-    // Validate inputs
     if (!formData.name || !formData.email || !formData.projectType || !formData.message || !formData.consent) {
-      setStatus({ type: "error_invalid" });
+      setStatus("error_invalid");
       return;
     }
-
-    // Check honeypot
-    if (formData.website) {
-      setStatus({ type: "error_bot" });
+    if (formData.website || !token) {
+      setStatus("error_bot");
       return;
     }
-
-    // Check Turnstile token
-    if (!turnstileToken) {
-      setStatus({ type: "error_bot" });
-      return;
-    }
-
-    setStatus({ type: "sending" });
-
+    setStatus("sending");
     try {
       const endpoint = process.env.NEXT_PUBLIC_CONTACT_WORKER_URL || "https://contact-worker.jeshuasalazar.workers.dev";
-      const payload = {
-        name: formData.name,
-        email: formData.email,
-        organization: formData.organization,
-        projectType: formData.projectType,
-        message: formData.message,
-        consent: formData.consent,
-        turnstileToken: turnstileToken,
-        website: formData.website,
-      };
-
       const res = await fetch(endpoint, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...formData, turnstileToken: token }),
       });
-
       const data = await res.json();
-
       if (res.ok && data.ok) {
-        setStatus({ type: "success" });
-        setFormData({
-          name: "",
-          email: "",
-          organization: "",
-          projectType: "",
-          message: "",
-          consent: false,
-          website: "",
-        });
-        // Reset turnstile
-        if (turnstileWidgetId.current && (window as any).turnstile) {
-          (window as any).turnstile.reset(turnstileWidgetId.current);
-          setTurnstileToken("");
-        }
+        setStatus("success");
+        setFormData(empty);
       } else {
-        if (data.code === "BOT_REJECTED" || data.code === "INVALID_INPUT") {
-          setStatus({ type: "error_bot" });
-        } else {
-          setStatus({ type: "error_server" });
-        }
-        // Reset turnstile to try again
-        if (turnstileWidgetId.current && (window as any).turnstile) {
-          (window as any).turnstile.reset(turnstileWidgetId.current);
-          setTurnstileToken("");
-        }
+        setStatus(data.code === "BOT_REJECTED" || data.code === "INVALID_INPUT" ? "error_bot" : "error_server");
       }
+      resetTurnstile();
     } catch (error) {
       console.error("Submission error:", error);
-      setStatus({ type: "error_server" });
+      setStatus("error_server");
     }
   };
 
+  const labels: Record<(typeof TYPES)[number], string> = {
+    diagnostico: c.projectType_diagnostico,
+    estrategia: c.projectType_estrategia,
+    implementacion: c.projectType_implementacion,
+    formacion: c.projectType_formacion,
+    conferencia: c.projectType_conferencia,
+    other: c.projectType_other,
+  };
+
+  const messages = {
+    success: ["text-emerald-300 border-emerald-400/20 bg-emerald-400/5", c.success],
+    error_invalid: ["text-amber-200 border-amber-300/20 bg-amber-300/5", c.error_invalid],
+    error_bot: ["text-rose-200 border-rose-300/20 bg-rose-300/5", c.error_bot],
+    error_server: ["text-rose-200 border-rose-300/20 bg-rose-300/5", c.error_server],
+  } as const;
+  const msg = status in messages ? messages[status as keyof typeof messages] : null;
+
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 font-sans">
-      <motion.div
-        initial={{ opacity: 0, y: 15 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5 }}
-        className="flex flex-col gap-8"
-      >
-        <div className="text-center md:text-start">
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-400">
-            {dict.contact.title}
-          </h1>
-          <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
-            {dict.contact.subtitle}
-          </p>
+    <section className="wrap pb-28 pt-36 sm:pt-44">
+      <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+        <div>
+          <p className="kicker">{dict.nav.contact}</p>
+          <h1 className="title mt-5">{c.title}</h1>
+          <p className="lede mt-6">{c.subtitle}</p>
+
+          <p className="mt-12 text-xs uppercase tracking-[0.18em] text-[var(--color-dim)]">{c.direct}</p>
+          <ul className="mt-4 grid gap-2 text-lg">
+            <li>
+              <a href={`mailto:${site.email}`} className="underline decoration-white/20 underline-offset-4 hover:decoration-white">
+                {site.email}
+              </a>
+            </li>
+            <li>
+              <a href={site.linkedin} target="_blank" rel="noopener" className="underline decoration-white/20 underline-offset-4 hover:decoration-white">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
         </div>
 
-        <GlassCard level="default" spotlight={true} className="p-6 sm:p-8">
-          <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Honeypot field (hidden from user) */}
-            <div className="hidden" aria-hidden="true">
-              <label htmlFor="website">Website</label>
-              <input
-                id="website"
-                type="text"
-                name="website"
-                value={formData.website}
-                onChange={handleChange}
-                autoComplete="off"
-              />
-            </div>
+        <form id="formulario" onSubmit={handleSubmit} className="panel grid scroll-mt-28 gap-5 p-6 sm:p-10" noValidate>
+          <div className="grid gap-5 sm:grid-cols-2">
+            <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+              {c.name} *
+              <input type="text" name="name" autoComplete="name" required value={formData.name} onChange={handleChange} className="field" />
+            </label>
+            <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+              {c.email} *
+              <input type="email" name="email" autoComplete="email" inputMode="email" required value={formData.email} onChange={handleChange} className="field" />
+            </label>
+          </div>
+          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+            {c.organization}
+            <input type="text" name="organization" autoComplete="organization" value={formData.organization} onChange={handleChange} className="field" />
+          </label>
+          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+            {c.projectType} *
+            <select name="projectType" required value={formData.projectType} onChange={handleChange} className="field">
+              <option value="" disabled>
+                {c.projectType_placeholder}
+              </option>
+              {TYPES.map((t) => (
+                <option key={t} value={t}>
+                  {labels[t]}
+                </option>
+              ))}
+            </select>
+          </label>
+          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+            {c.message} *
+            <textarea name="message" rows={5} required value={formData.message} onChange={handleChange} className="field resize-y" />
+          </label>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {/* Name input */}
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="name" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  {dict.contact.name} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  required
-                  value={formData.name}
-                  onChange={handleChange}
-                  placeholder="e.g. John Doe"
-                  className="w-full bg-zinc-950/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all duration-300"
-                />
-              </div>
+          {/* Honeypot */}
+          <div className="absolute -left-[9999px]" aria-hidden="true">
+            <input type="text" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
+          </div>
 
-              {/* Email input */}
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="email" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  {dict.contact.email} <span className="text-red-500">*</span>
-                </label>
-                <input
-                  id="email"
-                  type="email"
-                  name="email"
-                  required
-                  value={formData.email}
-                  onChange={handleChange}
-                  placeholder="e.g. john@company.com"
-                  className="w-full bg-zinc-950/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all duration-300"
-                />
-              </div>
-            </div>
+          <label className="flex items-start gap-3 text-sm text-[var(--color-mute)]">
+            <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} className="mt-1 size-4 accent-[var(--color-glow)]" />
+            {c.consent}
+          </label>
 
-            <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-              {/* Organization input */}
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="organization" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  {dict.contact.organization}
-                </label>
-                <input
-                  id="organization"
-                  type="text"
-                  name="organization"
-                  value={formData.organization}
-                  onChange={handleChange}
-                  placeholder="e.g. Acme Inc."
-                  className="w-full bg-zinc-950/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all duration-300"
-                />
-              </div>
+          <div id="turnstile-container" className="min-h-[65px]" />
 
-              {/* Project Type dropdown */}
-              <div className="flex flex-col gap-1.5">
-                <label htmlFor="projectType" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                  {dict.contact.projectType} <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <select
-                    id="projectType"
-                    name="projectType"
-                    required
-                    value={formData.projectType}
-                    onChange={handleChange}
-                    className="w-full appearance-none bg-zinc-950/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all duration-300 cursor-pointer"
-                  >
-                    <option value="" disabled className="bg-zinc-950">
-                      {dict.contact.projectType_placeholder}
-                    </option>
-                    <option value="producto" className="bg-zinc-950">{dict.contact.projectType_product}</option>
-                    <option value="automatizacion" className="bg-zinc-950">{dict.contact.projectType_automation}</option>
-                    <option value="ia" className="bg-zinc-950">{dict.contact.projectType_ia}</option>
-                    <option value="colaboracion" className="bg-zinc-950">{dict.contact.projectType_colab}</option>
-                    <option value="otro" className="bg-zinc-950">{dict.contact.projectType_other}</option>
-                  </select>
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-zinc-400">
-                    <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
-                      <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                    </svg>
-                  </div>
-                </div>
-              </div>
-            </div>
+          {msg && (
+            <output className={`block rounded-2xl border px-4 py-3 text-sm ${msg[0]}`}>{msg[1]}</output>
+          )}
 
-            {/* Message input */}
-            <div className="flex flex-col gap-1.5">
-              <label htmlFor="message" className="text-xs font-semibold uppercase tracking-wider text-zinc-400">
-                {dict.contact.message} <span className="text-red-500">*</span>
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                required
-                rows={4}
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Briefly describe your objectives, the problem you're trying to solve..."
-                className="w-full bg-zinc-950/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white placeholder-zinc-600 focus:outline-none focus:border-white/30 focus:ring-1 focus:ring-white/30 transition-all duration-300 resize-y"
-              />
-            </div>
-
-            {/* Consent checkbox */}
-            <div className="flex items-start gap-3">
-              <input
-                id="consent"
-                type="checkbox"
-                name="consent"
-                required
-                checked={formData.consent}
-                onChange={handleChange}
-                className="w-4 h-4 rounded border-white/10 bg-zinc-950/60 text-white accent-white focus:ring-0 focus:ring-offset-0 mt-0.5 cursor-pointer"
-              />
-              <label htmlFor="consent" className="text-xs text-zinc-400 leading-normal select-none cursor-pointer">
-                {dict.contact.consent}
-              </label>
-            </div>
-
-            {/* Turnstile widget container */}
-            <div className="flex justify-center sm:justify-start">
-              <div id="turnstile-container" className="min-h-[65px]" />
-            </div>
-
-            {/* Status Messages */}
-            {status.type === "success" && (
-              <div className="p-4 rounded-xl border border-emerald-500/20 bg-emerald-500/5 text-xs text-emerald-400 leading-relaxed">
-                {dict.contact.success}
-              </div>
-            )}
-            {status.type === "error_invalid" && (
-              <div className="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 text-xs text-rose-400 leading-relaxed">
-                {dict.contact.error_invalid}
-              </div>
-            )}
-            {status.type === "error_bot" && (
-              <div className="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 text-xs text-rose-400 leading-relaxed">
-                {dict.contact.error_bot}
-              </div>
-            )}
-            {status.type === "error_server" && (
-              <div className="p-4 rounded-xl border border-rose-500/20 bg-rose-500/5 text-xs text-rose-400 leading-relaxed">
-                {dict.contact.error_server}
-              </div>
-            )}
-
-            {/* Submit Button */}
-            <div className="flex justify-end">
-              <button
-                type="submit"
-                disabled={status.type === "sending"}
-                className={`inline-flex h-11 items-center justify-center rounded-xl bg-white px-6 text-xs font-semibold text-black hover:bg-zinc-200 transition-colors duration-300 shadow-md cursor-pointer ${
-                  status.type === "sending" ? "opacity-50 cursor-not-allowed" : ""
-                }`}
-              >
-                {status.type === "sending" ? dict.contact.sending : dict.contact.submit}
-              </button>
-            </div>
-          </form>
-        </GlassCard>
-      </motion.div>
-    </div>
+          <button type="submit" disabled={status === "sending"} className="btn btn-light w-full disabled:opacity-60">
+            {status === "sending" ? c.sending : c.submit}
+          </button>
+        </form>
+      </div>
+    </section>
   );
 }
