@@ -1,39 +1,35 @@
-"use client";
-
 import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { Locale } from "@/lib/i18n";
+import { site } from "@/lib/site";
 
 interface FooterProps {
-  dict: {
-    rights: string;
-    privacy: string;
-    built_with: string;
-  };
+  locale: string;
+  dict: { tagline: string; rights: string; privacy: string; built_with: string };
 }
 
-export default function Footer({ dict }: FooterProps) {
-  const pathname = usePathname();
-  const currentLocale = (pathname.split("/")[1] || "en") as Locale;
-
+export default function Footer({ locale, dict }: FooterProps) {
   return (
-    <footer className="w-full border-t border-white/[0.06] bg-zinc-950/40 py-8 mt-auto">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-4 sm:flex-row text-xs text-zinc-500 font-sans">
-          <div>
-            &copy; {new Date().getFullYear()} Jeshua Salazar. {dict.rights}
-          </div>
-          <div className="flex items-center gap-4">
-            <Link
-              href={`/${currentLocale}/privacidad`}
-              className="hover:text-zinc-300 transition-colors"
-            >
-              {dict.privacy}
-            </Link>
-            <span>•</span>
-            <span>{dict.built_with}</span>
-          </div>
+    <footer className="hairline-top mt-auto pb-24 pt-14 sm:pb-12">
+      <div className="wrap flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <p className="serif text-3xl sm:text-4xl">{dict.tagline}</p>
+          <p className="mt-4 text-sm text-[var(--color-dim)]">
+            © {new Date().getFullYear()} Jeshua Salazar · {dict.rights} · {dict.built_with}
+          </p>
         </div>
+        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--color-mute)]">
+          <li>
+            <a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a>
+          </li>
+          <li>
+            <a href={site.linkedin} target="_blank" rel="noopener" className="hover:text-white">LinkedIn</a>
+          </li>
+          <li>
+            <a href={site.ailearning} target="_blank" rel="noopener" className="hover:text-white">aiLearning</a>
+          </li>
+          <li>
+            <Link href={`/${locale}/privacidad`} className="hover:text-white">{dict.privacy}</Link>
+          </li>
+        </ul>
       </div>
     </footer>
   );

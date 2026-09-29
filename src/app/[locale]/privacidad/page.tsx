@@ -46,10 +46,10 @@ export default async function PrivacyPage({
   };
 
   return (
-    <div className="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8 font-sans">
+    <div className="wrap max-w-3xl pb-28 pt-36 sm:pt-44">
       <div className="flex flex-col gap-8">
         <div className="text-center md:text-start">
-          <h1 className="text-3xl font-extrabold tracking-tight text-white sm:text-4xl bg-clip-text text-transparent bg-gradient-to-b from-white to-zinc-400">
+          <h1 className="title">
             {content.title}
           </h1>
           <p className="text-sm text-zinc-400 mt-2 leading-relaxed">

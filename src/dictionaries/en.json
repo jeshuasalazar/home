@@ -1,58 +1,210 @@
 {
+  "meta": {
+    "title": "Jeshua Salazar · AI agent teams for your business",
+    "description": "I design, deploy and teach you to lead teams of AI agents that run your business. Book a free discovery call or a 1:1 strategy session."
+  },
   "nav": {
     "home": "Home",
-    "projects": "Projects",
+    "philosophy": "Philosophy",
+    "services": "Services",
+    "ailearning": "aiLearning",
+    "projects": "Cases",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "book": "Book a call",
+    "menu": "Menu"
   },
   "hero": {
-    "role": "Full-Stack & AI Automation Engineer",
-    "tagline": "Automating the future of work with Artificial Intelligence & scalable architectures.",
-    "description": "I help businesses optimize operations, automate workflows, and integrate AI to multiply productivity and reduce operational costs.",
-    "cta_projects": "View Projects",
-    "cta_contact": "Let's Talk Business"
+    "role": "Architect of AI agent teams",
+    "title_a": "Your next employee",
+    "title_b": "is an agent.",
+    "description": "I design and put teams of AI agents to work inside your business, and teach your people to lead them. You keep the work only a person can do.",
+    "cta_book": "Book a call",
+    "cta_services": "How I can help",
+    "note": "First 20-minute call, free of charge.",
+    "cta_contact": "Book a call",
+    "cta_projects": "See cases",
+    "scroll": "Scroll"
+  },
+  "manifesto": {
+    "kicker": "Philosophy",
+    "text": "AI isn't here to take your job. It's here to take the work you never should have been doing.",
+    "principles": [
+      { "title": "Agents, not tools", "desc": "A chatbot answers. An agent has a role, an owner and results measured every week." },
+      { "title": "People in charge", "desc": "Agents execute; your team decides. I design every flow so a person reviews what matters." },
+      { "title": "Results, not demos", "desc": "If it doesn't save hours, reduce errors or sell more, it doesn't ship. Simple as that." }
+    ]
+  },
+  "team": {
+    "kicker": "Your new team",
+    "title": "Five roles that never sleep.",
+    "subtitle": "This is what a team of agents looks like inside a real company. We start with the role that gives you back the most hours.",
+    "roles": [
+      { "name": "Sales", "does": "Qualifies leads, follows up and books meetings while you sleep." },
+      { "name": "Content", "does": "Turns one idea into posts, emails and scripts in your voice." },
+      { "name": "Support", "does": "Answers your customers in minutes and escalates only what needs a person." },
+      { "name": "Finance", "does": "Reconciles, collects and warns you before a number gets out of hand." },
+      { "name": "Quality", "does": "Reviews the other agents' work before it reaches your customer." }
+    ]
+  },
+  "proof": {
+    "kicker": "Results",
+    "title": "I've done it before. In large organizations and in small teams.",
+    "items": [
+      { "value": "−66%", "label": "operational load using generative AI for the SIMOP project documentation", "source": "PEMEX headquarters" },
+      { "value": "−80%", "label": "time spent managing leads after automating the sales pipeline", "source": "aiLearning" },
+      { "value": "3 + AI", "label": "people and a team of agents run a complete education platform", "source": "aiLearning" },
+      { "value": "2,000+", "label": "people per audience across three editions as leader and ambassador", "source": "Talent Land" }
+    ]
+  },
+  "services": {
+    "kicker": "Services",
+    "title": "Three ways to start.",
+    "subtitle": "Choose based on where you are today. Every option starts with clarity on what to automate first.",
+    "from": "From",
+    "featured": "Most chosen",
+    "items": [
+      {
+        "id": "diagnostico",
+        "name": "Discovery call",
+        "duration": "20 min · video call",
+        "desc": "We talk about your operation and I'll tell you honestly whether an agent can help, and where to start.",
+        "includes": ["One process ready to automate", "A clear next step", "No commitment"],
+        "cta": "Book for free"
+      },
+      {
+        "id": "estrategia",
+        "name": "1:1 strategy session",
+        "duration": "90 min · video call + deliverable",
+        "desc": "We work through your case in depth and you leave with the map of your agent team: which processes, which tools, in what order and how much you save.",
+        "includes": ["Agent map for your business", "Estimate of hours and cost saved", "30-day plan", "Recording and written summary"],
+        "cta": "Book session"
+      },
+      {
+        "id": "implementacion",
+        "name": "Custom agent team",
+        "duration": "Project · 4 to 8 weeks",
+        "desc": "I design, build and connect your agents to your systems. Delivered working, documented and with your team trained to lead it.",
+        "includes": ["Agents in production", "Integration with your tools", "Team training", "Post-launch support"],
+        "cta": "Request a proposal"
+      }
+    ],
+    "extra_title": "Talks and workshops for companies",
+    "extra_desc": "“Your next employee is an agent”: a hands-on talk where we build a business operation with AI agents, live.",
+    "extra_cta": "Invite me to your event"
+  },
+  "method": {
+    "kicker": "Method",
+    "title": "From idea to agent in production.",
+    "steps": [
+      { "name": "Diagnose", "desc": "We find the process that eats the most hours and is easiest to delegate." },
+      { "name": "Design", "desc": "We define the agent's role, tools, limits and who supervises it." },
+      { "name": "Deploy", "desc": "I build it, connect it to your systems and we measure from day one." },
+      { "name": "Master", "desc": "Your team learns to lead it and to create the next ones. No lock-in." }
+    ]
+  },
+  "ailearning": {
+    "kicker": "aiLearning",
+    "title": "And when your team wants to master it.",
+    "motto": "Don't learn AI. Master it.",
+    "desc": "I co-founded aiLearning, the AI learning platform made in Mexico. Live classes and real projects across five levels, from discovering AI to leading autonomous systems.",
+    "levels": ["Discover", "Build", "Automate", "Design", "Lead"],
+    "cta": "Discover aiLearning",
+    "cta_teams": "Training for your company"
+  },
+  "about": {
+    "kicker": "About",
+    "title": "Jeshua Salazar",
+    "role": "Co-founder and CTO of aiLearning",
+    "bio": "I hold a degree in Digital Business from Mexico's Instituto Politécnico Nacional. I brought generative AI to PEMEX headquarters, served as a Talent Land ambassador in front of thousands of people, and today I run a complete platform with a team of three people and a team of agents. My mission: that every professional and every company brings AI agents on board as their new employees.",
+    "creds": ["IPN", "PEMEX", "Talent Land", "Agentic AI · Vanderbilt", "AI for Business · Wharton", "Certified instructor EC0217 · CONOCER"],
+    "cta": "Full bio",
+    "stage": "On stage"
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "items": [
+      { "q": "Do I need to know how to code?", "a": "No. You know your business; I handle the technical side and teach you to lead the agents in plain language." },
+      { "q": "Is my company too small for this?", "a": "Quite the opposite. Small teams gain the most: a well-designed agent adds working hours without adding payroll." },
+      { "q": "What happens to my company's data?", "a": "Each agent accesses only what it needs, with minimum permissions and a person in charge. Security is designed from day one." },
+      { "q": "Do you work outside Mexico?", "a": "Yes. All the work can be done remotely, in Spanish or English." }
+    ]
+  },
+  "final": {
+    "title": "The door is already open.",
+    "subtitle": "Twenty minutes is enough to know whether an agent can change your week.",
+    "cta": "Book your call",
+    "or": "or write to me at"
+  },
+  "booking": {
+    "title": "Book with Jeshua",
+    "subtitle": "Choose how you want to start. I'll confirm within one business day.",
+    "close": "Close",
+    "free": "Free",
+    "fallback": "Prefer to write?"
   },
   "bento": {
-    "profile_title": "Jeshua Salazar",
-    "profile_subtitle": "AI & Automation Engineer",
-    "profile_bio": "I design software solutions focused on business ROI. Specialized in connecting large language models to databases and business workflows.",
-    "skills_title": "Core Capabilities",
-    "skills_automation": "Workflow Automation",
-    "skills_automation_desc": "Autonomous workflows that eliminate repetitive tasks and reduce human error to 0%.",
-    "skills_ai": "AI Integration",
-    "skills_ai_desc": "Autonomous agents, custom LLMs, and Retrieval-Augmented Generation (RAG) tailored to your business.",
-    "skills_fullstack": "Full-Stack Development",
-    "skills_fullstack_desc": "Ultra-fast, secure web interfaces built on top of robust serverless infrastructures.",
-    "stats_title": "Measurable Impact",
-    "stats_hours": "Hours Saved",
-    "stats_efficiency": "Operational Efficiency",
-    "stats_cost": "Cost Reduction"
+    "profile_title": "Jeshua Salazar"
   },
   "contact": {
-    "title": "Start a Collaboration",
-    "subtitle": "Tell me about your current bottleneck and let's design a solution.",
+    "title": "Let's talk about your operation",
+    "subtitle": "Tell me which process takes up most of your time. I'll reply within one business day with a concrete next step.",
     "name": "Full name",
-    "email": "Business email",
-    "organization": "Organization / Company (Optional)",
-    "projectType": "Project Type",
+    "email": "Email",
+    "organization": "Company (optional)",
+    "projectType": "What are you interested in?",
     "projectType_placeholder": "Select an option",
-    "projectType_product": "Web Product Development",
-    "projectType_automation": "Process Automation",
-    "projectType_ia": "AI Integration / LLMs",
-    "projectType_colab": "Long-term Collaboration",
-    "projectType_other": "Other inquiry",
-    "message": "Project details (Problem, goals, approximate budget)",
+    "projectType_diagnostico": "Discovery call (20 min, free)",
+    "projectType_estrategia": "1:1 strategy session",
+    "projectType_implementacion": "Custom agent team",
+    "projectType_formacion": "Training for my team (aiLearning)",
+    "projectType_conferencia": "Talk or workshop",
+    "projectType_other": "Something else",
+    "message": "Which process would you like to hand over to an agent? Include your availability for the call.",
     "consent": "I agree to my data being processed to respond to this request.",
-    "submit": "Send Message",
+    "submit": "Send request",
     "sending": "Sending...",
-    "success": "Message sent successfully! I will reply in less than 24 business hours.",
+    "success": "Done! I received your request. I'll reply within one business day.",
     "error_invalid": "Please fill in all required fields with valid data.",
-    "error_bot": "Antispam verification failed. Please try again.",
-    "error_server": "Internal server error. Please email me directly at hola@jeshuasalazar.com."
+    "error_bot": "The anti-spam check failed. Please try again.",
+    "error_server": "Something went wrong on our side. Write to me directly at hola@jeshuasalazar.com.",
+    "direct": "Direct contact"
+  },
+  "aboutPage": {
+    "kicker": "About",
+    "title": "I build teams where people lead and agents execute.",
+    "paragraphs": [
+      "I'm co-founder and CTO of aiLearning Innovación y Desarrollo Educativo, where I design AI infrastructure and Agent-as-a-Service models for companies and professionals. I hold a degree in Digital Business and a technical degree in Digital Systems from Mexico's Instituto Politécnico Nacional; my thesis studied how AI optimizes digital sales in Social Commerce.",
+      "aiLearning is the AI learning platform made in Mexico. Its premise is “Don't learn AI. Master it.”: hands-on training with live classes and real projects across five levels, from Nexo (discover) to Zenit (lead autonomous systems). Since 2024 I've led the build of the platform and its academy, where a team of three people works with AI agents as part of the team. On the commercial side, I led the Social Commerce strategy that filled our events at venues such as CANACO and AMCP, and automated the sales pipeline with AI, cutting lead-management time by up to 80%.",
+      "At PEMEX headquarters I used generative AI to write the user stories for the SIMOP traceability project and reduced the team's operational load by 66%; I also designed Power BI dashboards for leadership. For three years I was community leader and ambassador for Talent Land, one of Latin America's largest tech events, in front of audiences of more than 2,000 people. Before that, I managed a private investment fund."
+    ],
+    "factsTitle": "In short",
+    "facts": [
+      { "k": "Current role", "v": "Co-founder and CTO · aiLearning" },
+      { "k": "Education", "v": "B.A. Digital Business and Digital Systems Technician · IPN" },
+      { "k": "Corporate impact", "v": "PEMEX: −66% operational load with generative AI" },
+      { "k": "Stages", "v": "Talent Land (2,000+ people), CANACO, AMCP" },
+      { "k": "Languages", "v": "Spanish, English (C1), French (B1), basic German" }
+    ],
+    "certsTitle": "Certifications",
+    "certs": ["Agentic AI · Vanderbilt", "AI for Business · Wharton", "Salesforce Agentforce", "Power BI", "Inbound · HubSpot", "Certified instructor EC0217 · CONOCER-SEP"],
+    "cta": "Let's work together"
+  },
+  "cases": {
+    "kicker": "Cases",
+    "title": "Real cases, measurable results.",
+    "subtitle": "Projects where AI stopped being a demo and became part of the team.",
+    "role_label": "Role:",
+    "outcomes_label": "Results",
+    "problem_label": "Challenge",
+    "tech_label": "Tools",
+    "back": "Back to cases",
+    "read": "View case"
   },
   "footer": {
+    "tagline": "AI agents are the new employees.",
     "rights": "All rights reserved.",
-    "privacy": "Privacy Policy",
-    "built_with": "Built with Next.js and Cloudflare"
+    "privacy": "Privacy",
+    "built_with": "Made in Mexico"
   }
 }
