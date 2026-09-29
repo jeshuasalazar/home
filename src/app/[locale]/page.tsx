@@ -1,15 +1,17 @@
 import { siClaude, siCloudflare, siGithub, siNextdotjs, siStripe, siSupabase } from "simple-icons";
 import Actions from "@/components/Actions";
-import { serviceIcons, serviceTints } from "@/components/serviceMeta";
+import { serviceIcons } from "@/components/serviceMeta";
 import Clock from "@/components/Clock";
+import CodeScene from "@/components/CodeScene";
 import { Chevron, LinkedIn, Mail } from "@/components/Icons";
 import { getDictionary, type Locale } from "@/lib/i18n";
 import { bookingHref, type ServiceId, site } from "@/lib/site";
 
-const covers: Record<string, string> = {
-  "plataforma-operada-con-agentes": "equipo",
-  "pemex-simop": "esfera",
-  "pipeline-de-ventas-con-ia": "red",
+// Escenas de Trabajo: imagen base en gris + lugar para el HUD.
+const scenes: Record<string, { img: string; place: string }> = {
+  "plataforma-operada-con-agentes": { img: "ailearning", place: "CDMX" },
+  "pemex-simop": { img: "pemex", place: "CDMX" },
+  "talent-land": { img: "talentland", place: "GDL" },
 };
 
 // Herramientas del Dock. Higgsfield y Codex no tienen logo libre: van como monograma.
@@ -65,7 +67,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
       <header className="col flex flex-col items-center pt-14 text-center sm:pt-20">
         <p className="chip enter" style={vars({ "--i": 0 })}>
           <span className="live-dot" aria-hidden="true" />
-          {d.hero.location} · <Clock locale={locale} />
+          {d.hero.location} · 19.43°N 99.13°W · <Clock locale={locale} />
         </p>
 
         <div className="avatar enter mt-8" style={vars({ "--i": 1 })}>
@@ -75,15 +77,15 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
           </picture>
         </div>
 
-        <h1 className="enter mt-5 text-[1.375rem] font-semibold tracking-tight" style={vars({ "--i": 2 })}>
+        <h1 className="enter caps mt-6 ps-[0.3em] text-[1.05rem] font-semibold tracking-[0.3em]" style={vars({ "--i": 2 })}>
           Jeshua Salazar
         </h1>
-        <p className="enter text-[0.9375rem] text-[var(--color-label-3)]" style={vars({ "--i": 2 })}>
+        <p className="enter mono mt-1.5 text-[0.72rem] text-[var(--color-label-3)]" style={vars({ "--i": 2 })}>
           {d.hero.role}
         </p>
 
-        <p className="enter mt-6 max-w-md text-[clamp(1.6rem,6vw,2.1rem)] font-semibold leading-[1.12] tracking-[-0.03em]" style={vars({ "--i": 3 })}>
-          {d.hero.tagline_a} <span className="serif font-normal text-[var(--color-glow)]">{d.hero.tagline_b}</span>
+        <p className="enter mt-7 max-w-lg text-[clamp(1.45rem,5.6vw,2rem)] font-medium uppercase leading-[1.12] tracking-[0.02em]" style={vars({ "--i": 3 })}>
+          {d.hero.tagline_a} <span className="cursor font-light text-[var(--color-label-2)]">{d.hero.tagline_b}</span>
         </p>
 
         <div className="enter mt-8 flex w-full justify-center" style={vars({ "--i": 4 })}>
@@ -109,7 +111,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
             </a>
           </li>
           <li>
-            <a href={site.ailearning} target="_blank" rel="noopener" className="icon-btn !w-auto px-3 text-[0.8rem] font-medium" aria-label="aiLearning">
+            <a href={site.ailearning} target="_blank" rel="noopener" className="icon-btn mono !w-auto px-3 text-[0.7rem] uppercase tracking-[0.1em]" aria-label="aiLearning">
               aiLearning ↗
             </a>
           </li>
@@ -120,9 +122,9 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* Sobre mí */}
         <section aria-labelledby="sobre-mi" className="reveal">
           <h2 id="sobre-mi" className="label mb-3 px-1">
-            {d.about.label}
+            <span className="text-[var(--color-label-2)]">01</span> {d.about.label}
           </h2>
-          <div className="grid gap-4 px-1 text-[1.02rem] leading-relaxed text-[var(--color-label-2)]">
+          <div className="grid gap-4 px-1 text-[1.06rem] font-light leading-relaxed text-[var(--color-label-2)]">
             {d.about.paragraphs.map((p) => (
               <p key={p.slice(0, 24)}>
                 <Rich text={p} />
@@ -134,7 +136,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* Servicios: lista agrupada */}
         <section id="servicios" aria-labelledby="servicios-t" className="reveal scroll-mt-8">
           <h2 id="servicios-t" className="label mb-3 px-1">
-            {d.services.label}
+            <span className="text-[var(--color-label-2)]">02</span> {d.services.label}
           </h2>
           <div className="list">
             {d.services.items.map((s) => {
@@ -145,14 +147,14 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
               const price = site.prices[id] ?? (id === "diagnostico" ? d.services.free : id === "implementacion" ? d.services.quote : null);
               return (
                 <a key={id} href={href} {...(external ? { target: "_blank", rel: "noopener" } : {})} className="row">
-                  <span className="tile" style={vars({ "--t": `var(${serviceTints[id]})` })}>
+                  <span className="tile">
                     <Icon className="size-[1.1rem]" />
                   </span>
                   <span className="min-w-0 flex-1">
-                    <span className="block text-[0.98rem]">{s.name}</span>
-                    <span className="block text-[0.82rem] leading-snug text-[var(--color-label-3)]">{s.desc}</span>
+                    <span className="block text-[0.92rem] font-medium uppercase tracking-[0.06em]">{s.name}</span>
+                    <span className="mono mt-0.5 block text-[0.7rem] leading-snug text-[var(--color-label-3)]">{s.desc}</span>
                   </span>
-                  {price && <span className="shrink-0 text-[0.9rem] text-[var(--color-label-2)]">{price}</span>}
+                  {price && <span className="mono shrink-0 text-[0.72rem] uppercase text-[var(--color-label-2)]">{price}</span>}
                   <Chevron className="chev size-4 shrink-0" />
                 </a>
               );
@@ -163,21 +165,25 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* Trabajo: tarjetas deslizables */}
         <section aria-labelledby="trabajo" className="reveal">
           <h2 id="trabajo" className="label mb-3 px-1">
-            {d.work.label}
+            <span className="text-[var(--color-label-2)]">03</span> {d.work.label}
           </h2>
           <ul className="rail">
-            {d.work.items.map((w) => (
+            {d.work.items.map((w, i) => (
               <li key={w.slug}>
                 <a href={`/${locale}/proyectos/${w.slug}`} className="card h-full">
-                  <div className="overflow-hidden">
-                    <picture>
-                      <source type="image/avif" srcSet={`/img/${covers[w.slug]}-1280.avif`} />
-                      <img src={`/img/${covers[w.slug]}-1280.webp`} alt="" width={1280} height={960} loading="lazy" />
-                    </picture>
+                  <div className="scene">
+                    <CodeScene src={`/img/escenas/${scenes[w.slug].img}.jpg`} className="absolute inset-0 size-full" />
+                    <span className="hud start-3 top-2.5">
+                      {String(i + 1).padStart(2, "0")} · {w.tag}
+                    </span>
+                    <span className="hud end-3 top-2.5">
+                      <span className="rec" aria-hidden="true" />
+                      {scenes[w.slug].place}
+                    </span>
                   </div>
                   <div className="p-4">
-                    <p className="text-[0.75rem] font-medium uppercase tracking-[0.08em] text-[var(--color-label-3)]">{w.tag}</p>
-                    <p className="mt-1 text-[0.98rem] font-medium leading-snug">{w.title}</p>
+                    <p className="mono text-[0.66rem] uppercase tracking-[0.12em] text-[var(--color-label-3)]">{w.tag}</p>
+                    <p className="mt-1.5 text-[0.92rem] font-medium uppercase leading-snug tracking-[0.04em]">{w.title}</p>
                   </div>
                 </a>
               </li>
@@ -188,7 +194,7 @@ export default async function Home({ params }: { params: Promise<{ locale: strin
         {/* Herramientas: Dock */}
         <section aria-labelledby="stack" className="reveal">
           <h2 id="stack" className="label mb-5 px-1">
-            {d.stack.label}
+            <span className="text-[var(--color-label-2)]">04</span> {d.stack.label}
           </h2>
           <div className="pt-10">
             <ul className="dock">

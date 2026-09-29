@@ -1,26 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Barlow, JetBrains_Mono } from "next/font/google";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
+import Starfield from "@/components/Starfield";
 import { getDictionary, isRTL, type Locale, locales } from "@/lib/i18n";
 import { type ServiceId, site } from "@/lib/site";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif-display",
-  display: "swap",
-});
+const barlow = Barlow({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-barlow", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains", display: "swap" });
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0a0a0b",
+  themeColor: "#050506",
   colorScheme: "dark",
 };
 
@@ -79,8 +74,9 @@ export default async function LocalizedLayout({
   };
 
   return (
-    <html lang={locale} dir={isRTL(locale) ? "rtl" : "ltr"} className={`${inter.variable} ${serif.variable} antialiased`}>
+    <html lang={locale} dir={isRTL(locale) ? "rtl" : "ltr"} className={`${barlow.variable} ${mono.variable} antialiased`}>
       <body className="relative isolate flex min-h-svh flex-col overflow-x-clip">
+        <Starfield />
         <main id="contenido" className="flex flex-grow flex-col">
           {children}
         </main>

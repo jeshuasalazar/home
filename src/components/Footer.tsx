@@ -11,8 +11,8 @@ interface FooterProps {
 export default function Footer({ locale, dict }: FooterProps) {
   return (
     <footer className="col pb-28 pt-16 text-center sm:pb-14">
-      <p className="serif text-2xl text-[var(--color-label-2)]">{dict.tagline}</p>
-      <nav aria-label="Idioma" className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[0.8rem]">
+      <p className="mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-label-2)]">{dict.tagline}</p>
+      <nav aria-label="Idioma" className="mono mt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[0.7rem] uppercase tracking-[0.08em]">
         {locales.map((l) => (
           <Link
             key={l}
@@ -25,7 +25,7 @@ export default function Footer({ locale, dict }: FooterProps) {
           </Link>
         ))}
       </nav>
-      <p className="mt-6 text-[0.8rem] text-[var(--color-label-3)]">
+      <p className="mono mt-6 text-[0.66rem] uppercase tracking-[0.08em] text-[var(--color-label-3)]">
         © {new Date().getFullYear()} Jeshua Salazar · {dict.rights} ·{" "}
         <Link href={`/${locale}/privacidad`} className="hover:text-[var(--color-label-2)]">
           {dict.privacy}

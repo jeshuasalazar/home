@@ -29,18 +29,46 @@
     "free": "مجاني",
     "quote": "حسب الطلب",
     "items": [
-      { "id": "diagnostico", "name": "مكالمة استكشافية", "desc": "20 دقيقة · نحدّد ما تفوّضه أولًا" },
-      { "id": "estrategia", "name": "جلسة استراتيجية فردية", "desc": "90 دقيقة · خريطة الوكلاء لعملك" },
-      { "id": "implementacion", "name": "فريق وكلاء مخصّص", "desc": "4–8 أسابيع · في الإنتاج، مع تدريب فريقك" },
-      { "id": "conferencia", "name": "محاضرات وورش عمل", "desc": "«موظفك القادم وكيل»، مباشرةً" }
+      {
+        "id": "diagnostico",
+        "name": "مكالمة استكشافية",
+        "desc": "20 دقيقة · نحدّد ما تفوّضه أولًا"
+      },
+      {
+        "id": "estrategia",
+        "name": "جلسة استراتيجية فردية",
+        "desc": "90 دقيقة · خريطة الوكلاء لعملك"
+      },
+      {
+        "id": "implementacion",
+        "name": "فريق وكلاء مخصّص",
+        "desc": "4–8 أسابيع · في الإنتاج، مع تدريب فريقك"
+      },
+      {
+        "id": "conferencia",
+        "name": "محاضرات وورش عمل",
+        "desc": "«موظفك القادم وكيل»، مباشرةً"
+      }
     ]
   },
   "work": {
     "label": "الأعمال",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "منصة يديرها 3 أشخاص ووكلاء" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "الذكاء الاصطناعي التوليدي: خفض العبء التشغيلي بنسبة 66%" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "المبيعات", "title": "مسار مبيعات يعمل تلقائيًا: توفير 80% من الوقت" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "منصة يديرها 3 أشخاص ووكلاء"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "الذكاء الاصطناعي التوليدي: خفض العبء التشغيلي بنسبة 66%"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "سفير أمام أكثر من 2,000 شخص"
+      }
     ]
   },
   "stack": {

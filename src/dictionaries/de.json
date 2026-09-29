@@ -29,18 +29,46 @@
     "free": "Kostenlos",
     "quote": "Auf Anfrage",
     "items": [
-      { "id": "diagnostico", "name": "Kennenlerngespräch", "desc": "20 Min. · wir finden, was Sie zuerst delegieren" },
-      { "id": "estrategia", "name": "Strategiesitzung 1:1", "desc": "90 Min. · die Agentenkarte für Ihr Unternehmen" },
-      { "id": "implementacion", "name": "Individuelles Agententeam", "desc": "4–8 Wochen · im Live-Betrieb, Ihr Team geschult" },
-      { "id": "conferencia", "name": "Vorträge und Workshops", "desc": "„Ihr nächster Mitarbeiter ist ein Agent“, live" }
+      {
+        "id": "diagnostico",
+        "name": "Kennenlerngespräch",
+        "desc": "20 Min. · wir finden, was Sie zuerst delegieren"
+      },
+      {
+        "id": "estrategia",
+        "name": "Strategiesitzung 1:1",
+        "desc": "90 Min. · die Agentenkarte für Ihr Unternehmen"
+      },
+      {
+        "id": "implementacion",
+        "name": "Individuelles Agententeam",
+        "desc": "4–8 Wochen · im Live-Betrieb, Ihr Team geschult"
+      },
+      {
+        "id": "conferencia",
+        "name": "Vorträge und Workshops",
+        "desc": "„Ihr nächster Mitarbeiter ist ein Agent“, live"
+      }
     ]
   },
   "work": {
     "label": "Projekte",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "Eine Plattform, betrieben von 3 Personen und Agenten" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "Generative KI: −66 % operative Last" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "Vertrieb", "title": "Eine Pipeline, die von selbst läuft: −80 % Zeit" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "Eine Plattform, betrieben von 3 Personen und Agenten"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "Generative KI: −66 % operative Last"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "Botschafter vor über 2.000 Menschen"
+      }
     ]
   },
   "stack": {

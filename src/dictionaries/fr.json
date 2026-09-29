@@ -29,18 +29,46 @@
     "free": "Gratuit",
     "quote": "Sur devis",
     "items": [
-      { "id": "diagnostico", "name": "Appel de découverte", "desc": "20 min · nous trouvons quoi déléguer en premier" },
-      { "id": "estrategia", "name": "Session stratégique 1:1", "desc": "90 min · la carte des agents pour votre entreprise" },
-      { "id": "implementacion", "name": "Équipe d'agents sur mesure", "desc": "4–8 semaines · en production, votre équipe formée" },
-      { "id": "conferencia", "name": "Conférences et ateliers", "desc": "« Votre prochain employé est un agent », en direct" }
+      {
+        "id": "diagnostico",
+        "name": "Appel de découverte",
+        "desc": "20 min · nous trouvons quoi déléguer en premier"
+      },
+      {
+        "id": "estrategia",
+        "name": "Session stratégique 1:1",
+        "desc": "90 min · la carte des agents pour votre entreprise"
+      },
+      {
+        "id": "implementacion",
+        "name": "Équipe d'agents sur mesure",
+        "desc": "4–8 semaines · en production, votre équipe formée"
+      },
+      {
+        "id": "conferencia",
+        "name": "Conférences et ateliers",
+        "desc": "« Votre prochain employé est un agent », en direct"
+      }
     ]
   },
   "work": {
     "label": "Réalisations",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "Une plateforme gérée par 3 personnes et des agents" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "IA générative : −66 % de charge opérationnelle" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "Ventes", "title": "Un pipeline qui tourne seul : −80 % de temps" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "Une plateforme gérée par 3 personnes et des agents"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "IA générative : −66 % de charge opérationnelle"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "Ambassadeur devant plus de 2 000 personnes"
+      }
     ]
   },
   "stack": {

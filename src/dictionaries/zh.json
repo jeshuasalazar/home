@@ -29,18 +29,46 @@
     "free": "免费",
     "quote": "报价",
     "items": [
-      { "id": "diagnostico", "name": "初次沟通", "desc": "20 分钟 · 找出最先该交出去的工作" },
-      { "id": "estrategia", "name": "1 对 1 战略会", "desc": "90 分钟 · 你的业务智能体地图" },
-      { "id": "implementacion", "name": "定制智能体团队", "desc": "4–8 周 · 上线运行，并培训你的团队" },
-      { "id": "conferencia", "name": "演讲与工作坊", "desc": "“你的下一位员工是智能体”，现场分享" }
+      {
+        "id": "diagnostico",
+        "name": "初次沟通",
+        "desc": "20 分钟 · 找出最先该交出去的工作"
+      },
+      {
+        "id": "estrategia",
+        "name": "1 对 1 战略会",
+        "desc": "90 分钟 · 你的业务智能体地图"
+      },
+      {
+        "id": "implementacion",
+        "name": "定制智能体团队",
+        "desc": "4–8 周 · 上线运行，并培训你的团队"
+      },
+      {
+        "id": "conferencia",
+        "name": "演讲与工作坊",
+        "desc": "“你的下一位员工是智能体”，现场分享"
+      }
     ]
   },
   "work": {
     "label": "作品",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "一个由 3 个人和智能体运营的平台" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "生成式 AI：运营负荷降低 66%" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "销售", "title": "自动运转的销售管道：耗时减少 80%" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "一个由 3 个人和智能体运营的平台"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "生成式 AI：运营负荷降低 66%"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "在 2,000 多名观众面前担任大使"
+      }
     ]
   },
   "stack": {

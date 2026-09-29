@@ -43,7 +43,7 @@ export default function Actions({ dict }: ActionsProps) {
     <a
       href="#servicios"
       data-open-booking
-      className="btn btn-primary flex-1 sm:flex-none"
+      className="btn btn-primary flex-1 !px-3 !tracking-[0.1em] sm:flex-none sm:!px-5 sm:!tracking-[0.14em]"
     >
       <Calendar className="size-[1.1rem]" />
       {dict.cta_book}
@@ -53,7 +53,7 @@ export default function Actions({ dict }: ActionsProps) {
     <button
       type="button"
       onClick={copy}
-      className="btn btn-glass flex-1 sm:flex-none"
+      className="btn btn-glass flex-1 !px-3 !tracking-[0.1em] sm:flex-none sm:!px-5 sm:!tracking-[0.14em]"
     >
       <Copy className="size-[1.1rem]" />
       {dict.copy_email}

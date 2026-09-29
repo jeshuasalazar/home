@@ -29,18 +29,46 @@
     "free": "Gratis",
     "quote": "Cotizar",
     "items": [
-      { "id": "diagnostico", "name": "Llamada de diagnóstico", "desc": "20 min · encontramos qué delegar primero" },
-      { "id": "estrategia", "name": "Sesión estratégica 1:1", "desc": "90 min · el mapa de agentes de tu negocio" },
-      { "id": "implementacion", "name": "Equipo de agentes a la medida", "desc": "4–8 semanas · en producción y con tu equipo capacitado" },
-      { "id": "conferencia", "name": "Conferencias y talleres", "desc": "“Tu próximo empleado es un agente”, en vivo" }
+      {
+        "id": "diagnostico",
+        "name": "Llamada de diagnóstico",
+        "desc": "20 min · encontramos qué delegar primero"
+      },
+      {
+        "id": "estrategia",
+        "name": "Sesión estratégica 1:1",
+        "desc": "90 min · el mapa de agentes de tu negocio"
+      },
+      {
+        "id": "implementacion",
+        "name": "Equipo de agentes a la medida",
+        "desc": "4–8 semanas · en producción y con tu equipo capacitado"
+      },
+      {
+        "id": "conferencia",
+        "name": "Conferencias y talleres",
+        "desc": "“Tu próximo empleado es un agente”, en vivo"
+      }
     ]
   },
   "work": {
     "label": "Trabajo",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "Una plataforma operada por 3 personas y agentes" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "IA generativa: −66 % de carga operativa" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "Ventas", "title": "Un pipeline que se atiende solo: −80 % de tiempo" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "Una plataforma operada por 3 personas y agentes"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "IA generativa: −66 % de carga operativa"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "Embajador frente a más de 2,000 personas"
+      }
     ]
   },
   "stack": {

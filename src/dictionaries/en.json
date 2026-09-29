@@ -29,18 +29,46 @@
     "free": "Free",
     "quote": "Quote",
     "items": [
-      { "id": "diagnostico", "name": "Discovery call", "desc": "20 min · we find what to delegate first" },
-      { "id": "estrategia", "name": "1:1 strategy session", "desc": "90 min · the agent map for your business" },
-      { "id": "implementacion", "name": "Custom agent team", "desc": "4–8 weeks · in production, with your team trained" },
-      { "id": "conferencia", "name": "Talks and workshops", "desc": "“Your next employee is an agent”, live" }
+      {
+        "id": "diagnostico",
+        "name": "Discovery call",
+        "desc": "20 min · we find what to delegate first"
+      },
+      {
+        "id": "estrategia",
+        "name": "1:1 strategy session",
+        "desc": "90 min · the agent map for your business"
+      },
+      {
+        "id": "implementacion",
+        "name": "Custom agent team",
+        "desc": "4–8 weeks · in production, with your team trained"
+      },
+      {
+        "id": "conferencia",
+        "name": "Talks and workshops",
+        "desc": "“Your next employee is an agent”, live"
+      }
     ]
   },
   "work": {
     "label": "Work",
     "items": [
-      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "A platform run by 3 people and agents" },
-      { "slug": "pemex-simop", "tag": "PEMEX", "title": "Generative AI: −66% operational load" },
-      { "slug": "pipeline-de-ventas-con-ia", "tag": "Sales", "title": "A pipeline that runs itself: −80% time" }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "A platform run by 3 people and agents"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "Generative AI: −66% operational load"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "Ambassador in front of 2,000+ people"
+      }
     ]
   },
   "stack": {
