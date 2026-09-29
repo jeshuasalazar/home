@@ -1,210 +1,120 @@
 {
   "meta": {
-    "title": "Jeshua Salazar · KI-Agententeams für Ihr Unternehmen",
-    "description": "Ich entwerfe und implementiere Teams aus KI-Agenten, die Ihr Unternehmen am Laufen halten, und zeige Ihnen, wie Sie sie führen. Buchen Sie ein kostenloses Erstgespräch oder eine 1:1-Strategiesitzung."
+    "title": "Jeshua Salazar · Teams aus KI-Agenten",
+    "description": "Ich entwerfe Teams aus KI-Agenten, die wie Mitarbeitende arbeiten, führe sie in Unternehmen ein und bringe Menschen bei, sie zu leiten. Gespräch buchen."
   },
   "nav": {
     "home": "Start",
-    "philosophy": "Philosophie",
-    "services": "Leistungen",
-    "ailearning": "aiLearning",
-    "projects": "Fallstudien",
-    "about": "Über mich",
-    "contact": "Kontakt",
-    "book": "Gespräch buchen",
-    "menu": "Menü"
+    "contact": "Kontakt"
   },
   "hero": {
-    "role": "Architekt für KI-Agententeams",
-    "title_a": "Ihr nächster Mitarbeiter",
-    "title_b": "ist ein Agent.",
-    "description": "Ich entwerfe Teams aus KI-Agenten und setze sie in Ihrem Unternehmen ein. Und ich zeige Ihren Mitarbeitenden, wie sie sie führen. Ihnen bleibt, was nur ein Mensch tun kann.",
+    "role": "Mitgründer und CTO von aiLearning",
+    "tagline_a": "Ich baue Teams aus KI-Agenten,",
+    "tagline_b": "die wie Mitarbeitende arbeiten.",
     "cta_book": "Gespräch buchen",
-    "cta_services": "Wie ich helfen kann",
-    "note": "Das erste 20-Minuten-Gespräch ist kostenlos.",
-    "cta_contact": "Gespräch buchen",
-    "cta_projects": "Fallstudien ansehen",
-    "scroll": "Scrollen"
+    "copy_email": "E-Mail kopieren",
+    "copied": "E-Mail kopiert",
+    "location": "Mexiko-Stadt"
   },
-  "manifesto": {
-    "kicker": "Philosophie",
-    "text": "KI ist nicht da, um Ihnen die Arbeit wegzunehmen. Sie nimmt Ihnen die Arbeit ab, die Sie nie hätten machen sollen.",
-    "principles": [
-      { "title": "Agenten, keine Tools", "desc": "Ein Chatbot antwortet. Ein Agent hat eine Rolle, einen Verantwortlichen und jede Woche gemessene Ergebnisse." },
-      { "title": "Der Mensch führt", "desc": "Agenten führen aus, Ihr Team entscheidet. Ich gestalte jeden Ablauf so, dass ein Mensch prüft, was zählt." },
-      { "title": "Ergebnisse statt Demos", "desc": "Was keine Stunden spart, Fehler reduziert oder den Umsatz steigert, geht nicht live. So einfach ist das." }
-    ]
-  },
-  "team": {
-    "kicker": "Ihr neues Team",
-    "title": "Fünf Rollen, die nie schlafen.",
-    "subtitle": "So sieht ein Agententeam in einem echten Unternehmen aus. Wir beginnen mit der Rolle, die Ihnen die meisten Stunden zurückgibt.",
-    "roles": [
-      { "name": "Vertrieb", "does": "Qualifiziert Leads, hakt nach und vereinbart Termine, während Sie schlafen." },
-      { "name": "Content", "does": "Macht aus einer Idee Beiträge, E-Mails und Skripte in Ihrer Stimme." },
-      { "name": "Support", "does": "Beantwortet Kundenanfragen in Minuten und eskaliert nur, was einen Menschen braucht." },
-      { "name": "Finanzen", "does": "Gleicht ab, mahnt und warnt Sie, bevor eine Zahl aus dem Ruder läuft." },
-      { "name": "Qualität", "does": "Prüft die Arbeit der anderen Agenten, bevor sie Ihren Kunden erreicht." }
-    ]
-  },
-  "proof": {
-    "kicker": "Ergebnisse",
-    "title": "Ich habe es schon getan. In Großkonzernen und in kleinen Teams.",
-    "items": [
-      { "value": "−66%", "label": "operative Last durch generative KI bei der Dokumentation des SIMOP-Projekts", "source": "PEMEX-Zentrale" },
-      { "value": "−80%", "label": "Zeitaufwand für das Lead-Management nach der Automatisierung der Vertriebspipeline", "source": "aiLearning" },
-      { "value": "3 + KI", "label": "Personen und ein Agententeam betreiben eine komplette Bildungsplattform", "source": "aiLearning" },
-      { "value": "2.000+", "label": "Personen pro Publikum in drei Ausgaben als Leader und Botschafter", "source": "Talent Land" }
+  "about": {
+    "label": "Über mich",
+    "paragraphs": [
+      "Ich bin besessen von gutem Design und von Produkten, die wirklich Probleme lösen. Die meiste Zeit baue ich mit KI, führe sie in Unternehmen ein und vermittle, was funktioniert und was nicht.",
+      "Aktuell heißt das drei Dinge. Ich entwerfe Agententeams, die in Unternehmen Vertrieb, Support, Content und Finanzen übernehmen. Ich habe [aiLearning](https://ailearning.mx) mitgegründet, die KI-Lernplattform „Made in Mexico“, betrieben von drei Personen und einem Team aus Agenten. Und ich halte Vorträge darüber, wie man sie führt.",
+      "Zuvor habe ich generative KI in die PEMEX-Zentrale gebracht und war Talent-Land-Botschafter vor mehr als 2.000 Zuhörenden. Ich bin Absolvent des IPN."
     ]
   },
   "services": {
-    "kicker": "Leistungen",
-    "title": "Drei Wege zum Einstieg.",
-    "subtitle": "Wählen Sie nach Ihrem heutigen Stand. Jede Option beginnt mit Klarheit darüber, was Sie zuerst automatisieren sollten.",
-    "from": "Ab",
-    "featured": "Am häufigsten gewählt",
+    "label": "Wie ich helfe",
+    "free": "Kostenlos",
+    "quote": "Auf Anfrage",
     "items": [
       {
         "id": "diagnostico",
-        "name": "Erstgespräch",
-        "duration": "20 Min. · Videocall",
-        "desc": "Wir sprechen über Ihren Betrieb, und ich sage Ihnen ehrlich, ob ein Agent helfen kann und wo Sie anfangen sollten.",
-        "includes": ["Ein Prozess, bereit zur Automatisierung", "Ein klarer nächster Schritt", "Unverbindlich"],
-        "cta": "Kostenlos buchen"
+        "name": "Kennenlerngespräch",
+        "desc": "20 Min. · wir finden, was Sie zuerst delegieren"
       },
       {
         "id": "estrategia",
-        "name": "1:1-Strategiesitzung",
-        "duration": "90 Min. · Videocall + Ergebnisdokument",
-        "desc": "Wir arbeiten Ihren Fall im Detail durch, und Sie gehen mit der Landkarte Ihres Agententeams nach Hause: welche Prozesse, welche Tools, in welcher Reihenfolge und wie viel Sie sparen.",
-        "includes": ["Agentenlandkarte für Ihr Unternehmen", "Schätzung der eingesparten Stunden und Kosten", "30-Tage-Plan", "Aufzeichnung und schriftliche Zusammenfassung"],
-        "cta": "Sitzung buchen"
+        "name": "Strategiesitzung 1:1",
+        "desc": "90 Min. · die Agentenkarte für Ihr Unternehmen"
       },
       {
         "id": "implementacion",
         "name": "Individuelles Agententeam",
-        "duration": "Projekt · 4 bis 8 Wochen",
-        "desc": "Ich entwerfe und baue Ihre Agenten und binde sie an Ihre Systeme an. Übergabe funktionsfähig, dokumentiert und mit einem Team, das für die Führung geschult ist.",
-        "includes": ["Agenten im Produktivbetrieb", "Integration in Ihre Tools", "Schulung des Teams", "Support nach dem Launch"],
-        "cta": "Angebot anfragen"
+        "desc": "4–8 Wochen · im Live-Betrieb, Ihr Team geschult"
+      },
+      {
+        "id": "conferencia",
+        "name": "Vorträge und Workshops",
+        "desc": "„Ihr nächster Mitarbeiter ist ein Agent“, live"
       }
-    ],
-    "extra_title": "Vorträge und Workshops für Unternehmen",
-    "extra_desc": "„Ihr nächster Mitarbeiter ist ein Agent“: ein praxisnaher Vortrag, in dem wir live einen Geschäftsbetrieb mit KI-Agenten aufbauen.",
-    "extra_cta": "Laden Sie mich zu Ihrer Veranstaltung ein"
-  },
-  "method": {
-    "kicker": "Methode",
-    "title": "Von der Idee zum Agenten im Live-Betrieb.",
-    "steps": [
-      { "name": "Analysieren", "desc": "Wir finden den Prozess, der die meisten Stunden frisst und sich am leichtesten delegieren lässt." },
-      { "name": "Entwerfen", "desc": "Wir definieren Rolle, Tools und Grenzen des Agenten und wer ihn beaufsichtigt." },
-      { "name": "Einführen", "desc": "Ich baue ihn, binde ihn an Ihre Systeme an, und wir messen ab dem ersten Tag." },
-      { "name": "Meistern", "desc": "Ihr Team lernt, ihn zu führen und die nächsten zu erschaffen. Ohne Abhängigkeit." }
     ]
   },
-  "ailearning": {
-    "kicker": "aiLearning",
-    "title": "Und wenn Ihr Team sie meistern will.",
-    "motto": "Lernen Sie KI nicht nur. Meistern Sie sie.",
-    "desc": "Ich habe aiLearning mitgegründet, die in Mexiko entwickelte Lernplattform für KI. Live-Kurse und echte Projekte auf fünf Stufen, vom ersten Kontakt mit KI bis zur Führung autonomer Systeme.",
-    "levels": ["Entdecken", "Bauen", "Automatisieren", "Entwerfen", "Führen"],
-    "cta": "aiLearning entdecken",
-    "cta_teams": "Schulungen für Ihr Unternehmen"
-  },
-  "about": {
-    "kicker": "Über mich",
-    "title": "Jeshua Salazar",
-    "role": "Mitgründer und CTO von aiLearning",
-    "bio": "Ich habe einen Abschluss in Digital Business vom Instituto Politécnico Nacional in Mexiko. Ich habe generative KI in die PEMEX-Zentrale gebracht, war Botschafter von Talent Land vor Tausenden von Menschen und leite heute eine komplette Plattform mit einem Team aus drei Personen und einem Team aus Agenten. Meine Mission: dass jede Fachkraft und jedes Unternehmen KI-Agenten als neue Mitarbeiter an Bord holt.",
-    "creds": ["IPN", "PEMEX", "Talent Land", "Agentic AI · Vanderbilt", "AI for Business · Wharton", "Zertifizierter Ausbilder EC0217 · CONOCER"],
-    "cta": "Vollständige Biografie",
-    "stage": "Auf der Bühne"
-  },
-  "faq": {
-    "kicker": "FAQ",
+  "work": {
+    "label": "Projekte",
     "items": [
-      { "q": "Muss ich programmieren können?", "a": "Nein. Sie kennen Ihr Geschäft; ich kümmere mich um die Technik und zeige Ihnen, wie Sie die Agenten in einfacher Sprache führen." },
-      { "q": "Ist mein Unternehmen zu klein dafür?", "a": "Im Gegenteil. Kleine Teams profitieren am meisten: Ein gut entworfener Agent schafft Arbeitsstunden, ohne die Gehaltskosten zu erhöhen." },
-      { "q": "Was passiert mit den Daten meines Unternehmens?", "a": "Jeder Agent greift nur auf zu, was er braucht, mit minimalen Berechtigungen und einem Verantwortlichen. Sicherheit wird von Tag eins an mitgedacht." },
-      { "q": "Arbeiten Sie auch außerhalb Mexikos?", "a": "Ja. Die gesamte Arbeit lässt sich aus der Ferne erledigen, auf Spanisch oder Englisch." }
+      {
+        "slug": "plataforma-operada-con-agentes",
+        "tag": "aiLearning",
+        "title": "Eine Plattform, betrieben von 3 Personen und Agenten"
+      },
+      {
+        "slug": "pemex-simop",
+        "tag": "PEMEX",
+        "title": "Generative KI: −66 % operative Last"
+      },
+      {
+        "slug": "talent-land",
+        "tag": "Talent Land",
+        "title": "Botschafter vor über 2.000 Menschen"
+      }
     ]
   },
-  "final": {
-    "title": "Die Tür steht schon offen.",
-    "subtitle": "Zwanzig Minuten genügen, um zu wissen, ob ein Agent Ihre Woche verändern kann.",
-    "cta": "Gespräch buchen",
-    "or": "oder schreiben Sie mir an"
+  "stack": {
+    "label": "Womit ich arbeite"
   },
   "booking": {
-    "title": "Mit Jeshua buchen",
-    "subtitle": "Wählen Sie, wie Sie starten möchten. Ich bestätige innerhalb eines Werktags.",
+    "title": "Termin mit Jeshua",
+    "subtitle": "Wählen Sie Ihren Einstieg. Ich bestätige innerhalb eines Werktags.",
     "close": "Schließen",
     "free": "Kostenlos",
     "fallback": "Lieber schreiben?"
   },
-  "bento": {
-    "profile_title": "Jeshua Salazar"
-  },
   "contact": {
-    "title": "Sprechen wir über Ihren Betrieb",
-    "subtitle": "Sagen Sie mir, welcher Prozess die meiste Zeit bindet. Ich antworte innerhalb eines Werktags mit einem konkreten nächsten Schritt.",
-    "name": "Vollständiger Name",
+    "title": "Sprechen wir",
+    "subtitle": "Sagen Sie mir, welcher Prozess die meiste Zeit kostet. Ich antworte innerhalb eines Werktags.",
+    "name": "Name",
     "email": "E-Mail",
     "organization": "Unternehmen (optional)",
     "projectType": "Woran sind Sie interessiert?",
     "projectType_placeholder": "Option auswählen",
-    "projectType_diagnostico": "Erstgespräch (20 Min., kostenlos)",
-    "projectType_estrategia": "1:1-Strategiesitzung",
+    "projectType_diagnostico": "Kennenlerngespräch (kostenlos)",
+    "projectType_estrategia": "Strategiesitzung 1:1",
     "projectType_implementacion": "Individuelles Agententeam",
     "projectType_formacion": "Schulung für mein Team (aiLearning)",
     "projectType_conferencia": "Vortrag oder Workshop",
     "projectType_other": "Etwas anderes",
-    "message": "Welchen Prozess möchten Sie an einen Agenten übergeben? Nennen Sie Ihre Verfügbarkeit für das Gespräch.",
-    "consent": "Ich bin damit einverstanden, dass meine Daten zur Bearbeitung dieser Anfrage verarbeitet werden.",
-    "submit": "Anfrage senden",
-    "sending": "Wird gesendet...",
-    "success": "Geschafft! Ihre Anfrage ist bei mir angekommen. Ich antworte innerhalb eines Werktags.",
-    "error_invalid": "Bitte füllen Sie alle Pflichtfelder mit gültigen Angaben aus.",
+    "message": "Was möchten Sie an einen Agenten übergeben? Nennen Sie Ihre Verfügbarkeit.",
+    "consent": "Ich bin einverstanden, dass meine Daten zur Bearbeitung dieser Anfrage verarbeitet werden.",
+    "submit": "Senden",
+    "sending": "Wird gesendet…",
+    "success": "Erledigt. Ich antworte innerhalb eines Werktags.",
+    "error_invalid": "Bitte füllen Sie die Pflichtfelder aus.",
     "error_bot": "Die Spam-Prüfung ist fehlgeschlagen. Bitte versuchen Sie es erneut.",
-    "error_server": "Auf unserer Seite ist etwas schiefgelaufen. Schreiben Sie mir direkt an hola@jeshuasalazar.com.",
+    "error_server": "Etwas ist schiefgelaufen. Schreiben Sie mir an hola@jeshuasalazar.com.",
     "direct": "Direkter Kontakt"
   },
-  "aboutPage": {
-    "kicker": "Über mich",
-    "title": "Ich baue Teams, in denen Menschen führen und Agenten ausführen.",
-    "paragraphs": [
-      "Ich bin Mitgründer und CTO von aiLearning Innovación y Desarrollo Educativo, wo ich KI-Infrastruktur und Agent-as-a-Service-Modelle für Unternehmen und Fachkräfte entwerfe. Ich habe einen Abschluss in Digital Business und eine technische Ausbildung in Digitalen Systemen vom Instituto Politécnico Nacional in Mexiko; meine Abschlussarbeit untersuchte, wie KI den digitalen Vertrieb im Social Commerce optimiert.",
-      "aiLearning ist die in Mexiko entwickelte Lernplattform für KI. Ihr Leitsatz: „Lernen Sie KI nicht nur. Meistern Sie sie.“: praxisnahe Weiterbildung mit Live-Kursen und echten Projekten auf fünf Stufen, von Nexo (entdecken) bis Zenit (autonome Systeme führen). Seit 2024 leite ich den Aufbau der Plattform und ihrer Akademie, in der ein Team aus drei Personen mit KI-Agenten als Teil des Teams arbeitet. Im Vertrieb habe ich die Social-Commerce-Strategie verantwortet, die unsere Veranstaltungen in Häusern wie CANACO und AMCP gefüllt hat, und die Vertriebspipeline mit KI automatisiert. Dadurch sank der Zeitaufwand für das Lead-Management um bis zu 80 %.",
-      "In der PEMEX-Zentrale habe ich mit generativer KI die User Stories für das Rückverfolgbarkeitsprojekt SIMOP geschrieben und die operative Last des Teams um 66 % gesenkt; außerdem habe ich Power-BI-Dashboards für die Führungsebene entworfen. Drei Jahre lang war ich Community-Leader und Botschafter von Talent Land, einer der größten Tech-Veranstaltungen Lateinamerikas, vor Publikum von mehr als 2.000 Personen. Zuvor habe ich einen privaten Investmentfonds verwaltet."
-    ],
-    "factsTitle": "Kurz gesagt",
-    "facts": [
-      { "k": "Aktuelle Rolle", "v": "Mitgründer und CTO · aiLearning" },
-      { "k": "Ausbildung", "v": "B.A. Digital Business und Techniker für Digitale Systeme · IPN" },
-      { "k": "Wirkung im Unternehmen", "v": "PEMEX: −66 % operative Last durch generative KI" },
-      { "k": "Bühnen", "v": "Talent Land (2.000+ Personen), CANACO, AMCP" },
-      { "k": "Sprachen", "v": "Spanisch, Englisch (C1), Französisch (B1), Grundkenntnisse in Deutsch" }
-    ],
-    "certsTitle": "Zertifizierungen",
-    "certs": ["Agentic AI · Vanderbilt", "AI for Business · Wharton", "Salesforce Agentforce", "Power BI", "Inbound · HubSpot", "Zertifizierter Ausbilder EC0217 · CONOCER-SEP"],
-    "cta": "Lassen Sie uns zusammenarbeiten"
-  },
   "cases": {
-    "kicker": "Fallstudien",
-    "title": "Echte Fälle, messbare Ergebnisse.",
-    "subtitle": "Projekte, in denen KI keine Demo mehr war, sondern Teil des Teams wurde.",
     "role_label": "Rolle:",
     "outcomes_label": "Ergebnisse",
     "problem_label": "Herausforderung",
-    "tech_label": "Tools",
-    "back": "Zurück zu den Fallstudien",
-    "read": "Fall ansehen"
+    "tech_label": "Werkzeuge",
+    "back": "Jeshua Salazar"
   },
   "footer": {
-    "tagline": "KI-Agenten sind die neuen Mitarbeiter.",
-    "rights": "Alle Rechte vorbehalten.",
-    "privacy": "Datenschutz",
-    "built_with": "Made in Mexico"
+    "tagline": "KI-Agenten sind die neuen Mitarbeitenden.",
+    "rights": "Made in Mexico.",
+    "privacy": "Datenschutz"
   }
 }

@@ -1,5 +1,4 @@
 import { Locale } from "@/lib/i18n";
-import GlassCard from "@/components/GlassCard";
 
 export default async function PrivacyPage({
   params,
@@ -46,22 +45,22 @@ export default async function PrivacyPage({
   };
 
   return (
-    <div className="wrap max-w-3xl pb-28 pt-36 sm:pt-44">
+    <div className="col pb-24 pt-20">
       <div className="flex flex-col gap-8">
         <div className="text-center md:text-start">
-          <h1 className="title">
+          <h1 className="text-3xl font-semibold tracking-tight">
             {content.title}
           </h1>
-          <p className="text-sm text-zinc-400 mt-2 leading-relaxed">
+          <p className="text-sm text-[var(--color-label-3)] mt-2 leading-relaxed">
             {content.subtitle}
           </p>
         </div>
 
-        <GlassCard level="default" className="p-6 sm:p-8">
-          <p className="text-sm text-zinc-300 leading-relaxed">
+        <div className="list p-6">
+          <p className="text-sm text-[var(--color-label-2)] leading-relaxed">
             {content.body}
           </p>
-        </GlassCard>
+        </div>
       </div>
     </div>
   );

@@ -1,36 +1,36 @@
 import Link from "next/link";
-import { site } from "@/lib/site";
+import { locales } from "@/lib/i18n";
+
+const names: Record<string, string> = { es: "Español", en: "English", fr: "Français", de: "Deutsch", ar: "العربية", zh: "中文" };
 
 interface FooterProps {
   locale: string;
-  dict: { tagline: string; rights: string; privacy: string; built_with: string };
+  dict: { tagline: string; rights: string; privacy: string };
 }
 
 export default function Footer({ locale, dict }: FooterProps) {
   return (
-    <footer className="hairline-top mt-auto pb-24 pt-14 sm:pb-12">
-      <div className="wrap flex flex-col gap-10 sm:flex-row sm:items-end sm:justify-between">
-        <div>
-          <p className="serif text-3xl sm:text-4xl">{dict.tagline}</p>
-          <p className="mt-4 text-sm text-[var(--color-dim)]">
-            © {new Date().getFullYear()} Jeshua Salazar · {dict.rights} · {dict.built_with}
-          </p>
-        </div>
-        <ul className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-[var(--color-mute)]">
-          <li>
-            <a href={`mailto:${site.email}`} className="hover:text-white">{site.email}</a>
-          </li>
-          <li>
-            <a href={site.linkedin} target="_blank" rel="noopener" className="hover:text-white">LinkedIn</a>
-          </li>
-          <li>
-            <a href={site.ailearning} target="_blank" rel="noopener" className="hover:text-white">aiLearning</a>
-          </li>
-          <li>
-            <Link href={`/${locale}/privacidad`} className="hover:text-white">{dict.privacy}</Link>
-          </li>
-        </ul>
-      </div>
+    <footer className="col pb-28 pt-16 text-center sm:pb-14">
+      <p className="mono text-[0.72rem] uppercase tracking-[0.18em] text-[var(--color-label-2)]">{dict.tagline}</p>
+      <nav aria-label="Idioma" className="mono mt-8 flex flex-wrap justify-center gap-x-4 gap-y-2 text-[0.7rem] uppercase tracking-[0.08em]">
+        {locales.map((l) => (
+          <Link
+            key={l}
+            href={`/${l}`}
+            hrefLang={l}
+            aria-current={l === locale ? "true" : undefined}
+            className={l === locale ? "text-[var(--color-label)]" : "text-[var(--color-label-3)] hover:text-[var(--color-label-2)]"}
+          >
+            {names[l]}
+          </Link>
+        ))}
+      </nav>
+      <p className="mono mt-6 text-[0.66rem] uppercase tracking-[0.08em] text-[var(--color-label-3)]">
+        © {new Date().getFullYear()} Jeshua Salazar · {dict.rights} ·{" "}
+        <Link href={`/${locale}/privacidad`} className="hover:text-[var(--color-label-2)]">
+          {dict.privacy}
+        </Link>
+      </p>
     </footer>
   );
 }

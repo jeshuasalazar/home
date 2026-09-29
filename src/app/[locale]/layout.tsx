@@ -1,28 +1,21 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Instrument_Serif } from "next/font/google";
+import { Barlow, JetBrains_Mono } from "next/font/google";
 import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
-import Navbar from "@/components/Navbar";
-import Spotlight from "@/components/Spotlight";
+import Starfield from "@/components/Starfield";
 import { getDictionary, isRTL, type Locale, locales } from "@/lib/i18n";
 import { type ServiceId, site } from "@/lib/site";
 import "../globals.css";
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
-const serif = Instrument_Serif({
-  subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-serif-display",
-  display: "swap",
-});
+const barlow = Barlow({ subsets: ["latin"], weight: ["300", "400", "500", "600"], variable: "--font-barlow", display: "swap" });
+const mono = JetBrains_Mono({ subsets: ["latin"], weight: ["400", "500"], variable: "--font-jetbrains", display: "swap" });
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
 
 export const viewport: Viewport = {
-  themeColor: "#0b0a09",
+  themeColor: "#050506",
   colorScheme: "dark",
 };
 
@@ -61,7 +54,7 @@ export default async function LocalizedLayout({
   const locale = rawLocale as Locale;
   const dict = await getDictionary(locale);
 
-  const services = dict.services.items.map((s) => ({ id: s.id as ServiceId, name: s.name, duration: s.duration }));
+  const services = dict.services.items.map((s) => ({ id: s.id as ServiceId, name: s.name, desc: s.desc }));
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -69,7 +62,7 @@ export default async function LocalizedLayout({
     name: "Jeshua Salazar",
     url: site.url,
     image: `${site.url}/img/retrato-1000.webp`,
-    jobTitle: dict.about.role,
+    jobTitle: dict.hero.role,
     email: `mailto:${site.email}`,
     sameAs: [site.linkedin],
     worksFor: { "@type": "Organization", name: "aiLearning", url: site.ailearning },
@@ -81,16 +74,14 @@ export default async function LocalizedLayout({
   };
 
   return (
-    <html lang={locale} dir={isRTL(locale) ? "rtl" : "ltr"} className={`${inter.variable} ${serif.variable} antialiased`}>
-      <body className="relative flex min-h-svh flex-col overflow-x-clip">
-        <Navbar locale={locale} dict={dict.nav} />
+    <html lang={locale} dir={isRTL(locale) ? "rtl" : "ltr"} className={`${barlow.variable} ${mono.variable} antialiased`}>
+      <body className="relative isolate flex min-h-svh flex-col overflow-x-clip">
+        <Starfield />
         <main id="contenido" className="flex flex-grow flex-col">
           {children}
         </main>
         <Footer locale={locale} dict={dict.footer} />
         <Booking locale={locale} dict={dict.booking} services={services} />
-        <Spotlight />
-        <div className="grain" aria-hidden="true" />
         {/* biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD estático, con "<" escapado */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       </body>
