@@ -18,7 +18,7 @@ export const site = {
   // Precio visible por servicio (null = sin precio público).
   prices: {
     diagnostico: null,
-    estrategia: "$4,900 MXN",
+    estrategia: "$3,900 MXN",
     implementacion: null,
   } satisfies Record<ServiceId, string | null>,
 };
