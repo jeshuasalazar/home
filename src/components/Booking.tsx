@@ -2,21 +2,17 @@
 
 import { useEffect, useRef } from "react";
 import { bookingHref, type ServiceId, site } from "@/lib/site";
-
-interface ServiceItem {
-  id: ServiceId;
-  name: string;
-  duration: string;
-}
+import { Chevron, Close } from "./Icons";
+import { serviceIcons, serviceTints } from "./serviceMeta";
 
 interface BookingProps {
   locale: string;
   dict: { title: string; subtitle: string; close: string; free: string; fallback: string };
-  services: ServiceItem[];
+  services: { id: ServiceId; name: string; desc: string }[];
 }
 
-// Cualquier elemento con [data-open-booking] abre este diálogo. Sin JS, esos
-// enlaces siguen funcionando porque apuntan a #servicios.
+// Cualquier elemento con [data-open-booking] abre esta hoja. Sin JS, esos
+// enlaces llevan a #servicios.
 export default function Booking({ locale, dict, services }: BookingProps) {
   const ref = useRef<HTMLDialogElement>(null);
 
@@ -37,64 +33,51 @@ export default function Booking({ locale, dict, services }: BookingProps) {
     // biome-ignore lint/a11y/useKeyWithClickEvents: clic en el fondo; Esc ya lo cierra el <dialog> nativo
     <dialog
       ref={ref}
-      className="booking"
+      className="sheet"
       aria-labelledby="booking-title"
       onClick={(e) => {
         if (e.target === ref.current) close();
       }}
     >
-      <div className="p-6 sm:p-8">
-        <div className="mx-auto mb-5 h-1 w-10 rounded-full bg-white/15 sm:hidden" aria-hidden="true" />
-        <div className="flex items-start justify-between gap-6">
+      <div className="px-4 pb-[max(1.25rem,env(safe-area-inset-bottom))] pt-3 sm:p-5">
+        <div className="mx-auto mb-4 h-1 w-9 rounded-full bg-white/20 sm:hidden" aria-hidden="true" />
+        <div className="flex items-start justify-between gap-4 px-1">
           <div>
-            <h2 id="booking-title" className="text-2xl font-semibold tracking-tight">
+            <h2 id="booking-title" className="text-xl font-semibold tracking-tight">
               {dict.title}
             </h2>
-            <p className="mt-2 text-sm leading-relaxed text-[var(--color-mute)]">{dict.subtitle}</p>
+            <p className="mt-1 text-sm text-[var(--color-label-2)]">{dict.subtitle}</p>
           </div>
-          <button
-            type="button"
-            onClick={close}
-            className="grid size-9 shrink-0 place-items-center rounded-full border border-[var(--hairline)] text-[var(--color-mute)] transition hover:text-white"
-            aria-label={dict.close}
-          >
-            <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.8" aria-hidden="true">
-              <path d="M6 6l12 12M18 6L6 18" strokeLinecap="round" />
-            </svg>
+          <button type="button" onClick={close} className="icon-btn -me-1 -mt-1 !size-8 bg-[var(--color-fill-2)]" aria-label={dict.close}>
+            <Close className="size-4" />
           </button>
         </div>
 
-        <ul className="mt-7 grid gap-3">
-          {services.map((s, i) => {
+        <div className="list mt-5">
+          {services.map((s) => {
             const href = bookingHref(s.id, locale);
             const external = href.startsWith("http");
             const price = site.prices[s.id] ?? (s.id === "diagnostico" ? dict.free : null);
+            const Icon = serviceIcons[s.id];
             return (
-              <li key={s.id}>
-                <a
-                  href={href}
-                  onClick={close}
-                  {...(external ? { target: "_blank", rel: "noopener" } : {})}
-                  className="group flex items-center gap-4 rounded-2xl border border-[var(--hairline)] bg-white/[0.02] p-4 transition hover:border-[var(--hairline-strong)] hover:bg-white/[0.05]"
-                >
-                  <span className="orb shrink-0" style={{ "--c": `var(--color-orb-${i + 1})` } as React.CSSProperties} />
-                  <span className="min-w-0 flex-1">
-                    <span className="block font-medium">{s.name}</span>
-                    <span className="block text-xs text-[var(--color-dim)]">{s.duration}</span>
-                  </span>
-                  {price && <span className="text-sm text-[var(--color-mute)]">{price}</span>}
-                  <span className="arrow text-[var(--color-dim)] transition group-hover:translate-x-0.5 group-hover:text-white" aria-hidden="true">
-                    →
-                  </span>
-                </a>
-              </li>
+              <a key={s.id} href={href} onClick={close} {...(external ? { target: "_blank", rel: "noopener" } : {})} className="row">
+                <span className="tile" style={{ "--t": `var(${serviceTints[s.id]})` } as React.CSSProperties}>
+                  <Icon className="size-[1.1rem]" />
+                </span>
+                <span className="min-w-0 flex-1">
+                  <span className="block text-[0.95rem]">{s.name}</span>
+                  <span className="block truncate text-[0.8rem] text-[var(--color-label-3)]">{s.desc}</span>
+                </span>
+                {price && <span className="text-sm text-[var(--color-label-2)]">{price}</span>}
+                <Chevron className="chev size-4" />
+              </a>
             );
           })}
-        </ul>
+        </div>
 
-        <p className="mt-6 text-center text-sm text-[var(--color-dim)]">
+        <p className="mt-4 text-center text-sm text-[var(--color-label-3)]">
           {dict.fallback}{" "}
-          <a href={`mailto:${site.email}`} className="text-[var(--color-ivory)] underline decoration-white/20 underline-offset-4 hover:decoration-white">
+          <a href={`mailto:${site.email}`} className="prose-link">
             {site.email}
           </a>
         </p>

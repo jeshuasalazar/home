@@ -19,7 +19,7 @@ const turnstile = () => (window as unknown as { turnstile?: Turnstile }).turnsti
 
 const TYPES = ["diagnostico", "estrategia", "implementacion", "formacion", "conferencia", "other"] as const;
 
-export default function ContactClient({ dict }: ContactClientProps) {
+export default function ContactClient({ dict, locale }: ContactClientProps) {
   const c = dict.contact;
   const empty = { name: "", email: "", organization: "", projectType: "", message: "", consent: false, website: "" };
   const [formData, setFormData] = useState(empty);
@@ -133,14 +133,14 @@ export default function ContactClient({ dict }: ContactClientProps) {
   const msg = status in messages ? messages[status as keyof typeof messages] : null;
 
   return (
-    <section className="wrap pb-28 pt-36 sm:pt-44">
-      <div className="grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
+    <section className="col pb-16 pt-12">
+      <div className="grid gap-14 ">
         <div>
-          <p className="kicker">{dict.nav.contact}</p>
-          <h1 className="title mt-5">{c.title}</h1>
-          <p className="lede mt-6">{c.subtitle}</p>
+          <a href={`/${locale}`} className="text-sm text-[var(--color-label-2)] hover:text-[var(--color-label)]">← Jeshua Salazar</a>
+          <h1 className="mt-8 text-3xl font-semibold tracking-tight">{c.title}</h1>
+          <p className="leading-relaxed text-[var(--color-label-2)] mt-6">{c.subtitle}</p>
 
-          <p className="mt-12 text-xs uppercase tracking-[0.18em] text-[var(--color-dim)]">{c.direct}</p>
+          <p className="mt-12 text-xs uppercase tracking-[0.18em] text-[var(--color-label-3)]">{c.direct}</p>
           <ul className="mt-4 grid gap-2 text-lg">
             <li>
               <a href={`mailto:${site.email}`} className="underline decoration-white/20 underline-offset-4 hover:decoration-white">
@@ -155,22 +155,22 @@ export default function ContactClient({ dict }: ContactClientProps) {
           </ul>
         </div>
 
-        <form id="formulario" onSubmit={handleSubmit} className="panel grid scroll-mt-28 gap-5 p-6 sm:p-10" noValidate>
+        <form id="formulario" onSubmit={handleSubmit} className="list grid scroll-mt-28 gap-5 p-6 sm:p-10" noValidate>
           <div className="grid gap-5 sm:grid-cols-2">
-            <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+            <label className="grid gap-2 text-sm text-[var(--color-label-2)]">
               {c.name} *
               <input type="text" name="name" autoComplete="name" required value={formData.name} onChange={handleChange} className="field" />
             </label>
-            <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+            <label className="grid gap-2 text-sm text-[var(--color-label-2)]">
               {c.email} *
               <input type="email" name="email" autoComplete="email" inputMode="email" required value={formData.email} onChange={handleChange} className="field" />
             </label>
           </div>
-          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+          <label className="grid gap-2 text-sm text-[var(--color-label-2)]">
             {c.organization}
             <input type="text" name="organization" autoComplete="organization" value={formData.organization} onChange={handleChange} className="field" />
           </label>
-          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+          <label className="grid gap-2 text-sm text-[var(--color-label-2)]">
             {c.projectType} *
             <select name="projectType" required value={formData.projectType} onChange={handleChange} className="field">
               <option value="" disabled>
@@ -183,7 +183,7 @@ export default function ContactClient({ dict }: ContactClientProps) {
               ))}
             </select>
           </label>
-          <label className="grid gap-2 text-sm text-[var(--color-mute)]">
+          <label className="grid gap-2 text-sm text-[var(--color-label-2)]">
             {c.message} *
             <textarea name="message" rows={5} required value={formData.message} onChange={handleChange} className="field resize-y" />
           </label>
@@ -193,7 +193,7 @@ export default function ContactClient({ dict }: ContactClientProps) {
             <input type="text" name="website" tabIndex={-1} autoComplete="off" value={formData.website} onChange={handleChange} />
           </div>
 
-          <label className="flex items-start gap-3 text-sm text-[var(--color-mute)]">
+          <label className="flex items-start gap-3 text-sm text-[var(--color-label-2)]">
             <input type="checkbox" name="consent" checked={formData.consent} onChange={handleChange} className="mt-1 size-4 accent-[var(--color-glow)]" />
             {c.consent}
           </label>
@@ -204,7 +204,7 @@ export default function ContactClient({ dict }: ContactClientProps) {
             <output className={`block rounded-2xl border px-4 py-3 text-sm ${msg[0]}`}>{msg[1]}</output>
           )}
 
-          <button type="submit" disabled={status === "sending"} className="btn btn-light w-full disabled:opacity-60">
+          <button type="submit" disabled={status === "sending"} className="btn btn-primary w-full disabled:opacity-60">
             {status === "sending" ? c.sending : c.submit}
           </button>
         </form>

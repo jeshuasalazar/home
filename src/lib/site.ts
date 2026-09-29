@@ -3,23 +3,26 @@
 // (Cal.com, Calendly, TidyCal…). Mientras esté en null, el botón lleva al
 // formulario de contacto con la opción ya seleccionada.
 
-export type ServiceId = "diagnostico" | "estrategia" | "implementacion";
+export type ServiceId = "diagnostico" | "estrategia" | "implementacion" | "conferencia";
 
 export const site = {
   url: "https://jeshuasalazar.com",
   email: "hola@jeshuasalazar.com",
   linkedin: "https://www.linkedin.com/in/jeshuasalazar",
+  github: "https://github.com/jeshuasalazar",
   ailearning: "https://ailearning.mx",
   booking: {
     diagnostico: null as string | null,
     estrategia: null as string | null,
     implementacion: null as string | null,
+    conferencia: null as string | null,
   } satisfies Record<ServiceId, string | null>,
   // Precio visible por servicio (null = sin precio público).
   prices: {
     diagnostico: null,
     estrategia: "$3,900 MXN",
     implementacion: null,
+    conferencia: null,
   } satisfies Record<ServiceId, string | null>,
 };
 

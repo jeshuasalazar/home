@@ -1,140 +1,50 @@
 {
   "meta": {
-    "title": "Jeshua Salazar · Équipes d'agents IA pour votre entreprise",
-    "description": "Je conçois, déploie et vous apprends à diriger des équipes d'agents IA qui font tourner votre entreprise. Réservez un appel découverte gratuit ou une session stratégique 1:1."
+    "title": "Jeshua Salazar · Équipes d'agents IA",
+    "description": "Je conçois des équipes d'agents IA qui travaillent comme des employés, je les déploie en entreprise et j'apprends à les diriger. Réservez un appel."
   },
   "nav": {
     "home": "Accueil",
-    "philosophy": "Philosophie",
-    "services": "Services",
-    "ailearning": "aiLearning",
-    "projects": "Cas",
-    "about": "À propos",
-    "contact": "Contact",
-    "book": "Réserver un appel",
-    "menu": "Menu"
+    "contact": "Contact"
   },
   "hero": {
-    "role": "Architecte d'équipes d'agents IA",
-    "title_a": "Votre prochain employé",
-    "title_b": "est un agent.",
-    "description": "Je conçois et mets au travail des équipes d'agents IA au sein de votre entreprise, et j'apprends à vos équipes à les diriger. Vous gardez ce que seule une personne peut faire.",
+    "role": "Cofondateur et CTO d'aiLearning",
+    "tagline_a": "Je construis des équipes d'agents IA",
+    "tagline_b": "qui travaillent comme des employés.",
     "cta_book": "Réserver un appel",
-    "cta_services": "Comment je peux vous aider",
-    "note": "Premier appel de 20 minutes, offert.",
-    "cta_contact": "Réserver un appel",
-    "cta_projects": "Voir les cas",
-    "scroll": "Défiler"
+    "copy_email": "Copier l'e-mail",
+    "copied": "E-mail copié",
+    "location": "Mexico"
   },
-  "manifesto": {
-    "kicker": "Philosophie",
-    "text": "L'IA n'est pas là pour vous prendre votre travail. Elle est là pour vous prendre celui que vous n'auriez jamais dû faire.",
-    "principles": [
-      { "title": "Des agents, pas des outils", "desc": "Un chatbot répond. Un agent a un rôle, un responsable et des résultats mesurés chaque semaine." },
-      { "title": "Les personnes aux commandes", "desc": "Les agents exécutent ; votre équipe décide. Je conçois chaque flux pour qu'une personne valide l'essentiel." },
-      { "title": "Des résultats, pas des démos", "desc": "Si cela ne fait pas gagner des heures, réduire les erreurs ou vendre plus, cela ne sort pas. Aussi simple que ça." }
-    ]
-  },
-  "team": {
-    "kicker": "Votre nouvelle équipe",
-    "title": "Cinq rôles qui ne dorment jamais.",
-    "subtitle": "Voici à quoi ressemble une équipe d'agents dans une vraie entreprise. Nous commençons par le rôle qui vous rend le plus d'heures.",
-    "roles": [
-      { "name": "Ventes", "does": "Qualifie les prospects, relance et planifie des rendez-vous pendant que vous dormez." },
-      { "name": "Contenu", "does": "Transforme une idée en publications, e-mails et scripts dans votre voix." },
-      { "name": "Support", "does": "Répond à vos clients en quelques minutes et ne transmet que ce qui exige une personne." },
-      { "name": "Finance", "does": "Rapproche, relance les paiements et vous alerte avant qu'un chiffre ne dérape." },
-      { "name": "Qualité", "does": "Relit le travail des autres agents avant qu'il n'atteigne votre client." }
-    ]
-  },
-  "proof": {
-    "kicker": "Résultats",
-    "title": "Je l'ai déjà fait. Dans de grandes organisations comme dans de petites équipes.",
-    "items": [
-      { "value": "−66%", "label": "de charge opérationnelle grâce à l'IA générative pour la documentation du projet SIMOP", "source": "Siège de PEMEX" },
-      { "value": "−80%", "label": "de temps consacré à la gestion des leads après l'automatisation du pipeline commercial", "source": "aiLearning" },
-      { "value": "3 + IA", "label": "personnes et une équipe d'agents font tourner une plateforme éducative complète", "source": "aiLearning" },
-      { "value": "2 000+", "label": "personnes par public sur trois éditions, comme leader et ambassadeur", "source": "Talent Land" }
+  "about": {
+    "label": "À propos",
+    "paragraphs": [
+      "Je suis passionné par le beau design et les produits qui résolvent vraiment des problèmes. Je passe l'essentiel de mon temps à construire avec l'IA, à la déployer en entreprise et à enseigner ce qui marche ou non.",
+      "Aujourd'hui, cela recouvre trois choses. Je conçois des équipes d'agents qui gèrent les ventes, le support, le contenu et la finance au sein d'entreprises. J'ai cofondé [aiLearning](https://ailearning.mx), la plateforme d'apprentissage de l'IA made in Mexico, portée par trois personnes et une équipe d'agents. Et je donne des conférences sur la façon de les diriger.",
+      "Auparavant, j'ai introduit l'IA générative au siège de PEMEX et j'ai été ambassadeur de Talent Land devant plus de 2 000 personnes. Je suis diplômé de l'IPN."
     ]
   },
   "services": {
-    "kicker": "Services",
-    "title": "Trois façons de commencer.",
-    "subtitle": "Choisissez selon votre situation actuelle. Chaque option commence par la clarté sur ce qu'il faut automatiser en premier.",
-    "from": "À partir de",
-    "featured": "Le plus choisi",
+    "label": "Comment je vous aide",
+    "free": "Gratuit",
+    "quote": "Sur devis",
     "items": [
-      {
-        "id": "diagnostico",
-        "name": "Appel découverte",
-        "duration": "20 min · visioconférence",
-        "desc": "Nous parlons de votre activité et je vous dis honnêtement si un agent peut vous aider, et par où commencer.",
-        "includes": ["Un processus prêt à automatiser", "Une prochaine étape claire", "Sans engagement"],
-        "cta": "Réserver gratuitement"
-      },
-      {
-        "id": "estrategia",
-        "name": "Session stratégique 1:1",
-        "duration": "90 min · visioconférence + livrable",
-        "desc": "Nous travaillons votre cas en profondeur et vous repartez avec la carte de votre équipe d'agents : quels processus, quels outils, dans quel ordre et combien vous économisez.",
-        "includes": ["Carte des agents pour votre entreprise", "Estimation des heures et des coûts économisés", "Plan à 30 jours", "Enregistrement et synthèse écrite"],
-        "cta": "Réserver la session"
-      },
-      {
-        "id": "implementacion",
-        "name": "Équipe d'agents sur mesure",
-        "duration": "Projet · 4 à 8 semaines",
-        "desc": "Je conçois, construis et connecte vos agents à vos systèmes. Livré opérationnel, documenté et avec votre équipe formée pour le piloter.",
-        "includes": ["Agents en production", "Intégration à vos outils", "Formation de l'équipe", "Suivi après le lancement"],
-        "cta": "Demander une proposition"
-      }
-    ],
-    "extra_title": "Conférences et ateliers pour les entreprises",
-    "extra_desc": "« Votre prochain employé est un agent » : une conférence pratique où nous construisons en direct une opération d'entreprise avec des agents IA.",
-    "extra_cta": "M'inviter à votre événement"
-  },
-  "method": {
-    "kicker": "Méthode",
-    "title": "De l'idée à l'agent en production.",
-    "steps": [
-      { "name": "Diagnostiquer", "desc": "Nous trouvons le processus qui consomme le plus d'heures et qui est le plus facile à déléguer." },
-      { "name": "Concevoir", "desc": "Nous définissons le rôle de l'agent, ses outils, ses limites et qui le supervise." },
-      { "name": "Déployer", "desc": "Je le construis, le connecte à vos systèmes et nous mesurons dès le premier jour." },
-      { "name": "Maîtriser", "desc": "Votre équipe apprend à le diriger et à créer les suivants. Sans dépendance." }
+      { "id": "diagnostico", "name": "Appel de découverte", "desc": "20 min · nous trouvons quoi déléguer en premier" },
+      { "id": "estrategia", "name": "Session stratégique 1:1", "desc": "90 min · la carte des agents pour votre entreprise" },
+      { "id": "implementacion", "name": "Équipe d'agents sur mesure", "desc": "4–8 semaines · en production, votre équipe formée" },
+      { "id": "conferencia", "name": "Conférences et ateliers", "desc": "« Votre prochain employé est un agent », en direct" }
     ]
   },
-  "ailearning": {
-    "kicker": "aiLearning",
-    "title": "Et quand votre équipe veut la maîtriser.",
-    "motto": "N'apprenez pas l'IA. Maîtrisez-la.",
-    "desc": "J'ai cofondé aiLearning, la plateforme d'apprentissage de l'IA made in Mexico. Des cours en direct et des projets réels sur cinq niveaux, de la découverte de l'IA au pilotage de systèmes autonomes.",
-    "levels": ["Découvrir", "Construire", "Automatiser", "Concevoir", "Diriger"],
-    "cta": "Découvrir aiLearning",
-    "cta_teams": "Formation pour votre entreprise"
-  },
-  "about": {
-    "kicker": "À propos",
-    "title": "Jeshua Salazar",
-    "role": "Cofondateur et CTO d'aiLearning",
-    "bio": "Je suis diplômé en Digital Business de l'Instituto Politécnico Nacional du Mexique. J'ai introduit l'IA générative au siège de PEMEX, j'ai été ambassadeur de Talent Land devant des milliers de personnes, et je dirige aujourd'hui une plateforme complète avec une équipe de trois personnes et une équipe d'agents. Ma mission : que chaque professionnel et chaque entreprise intègre des agents IA comme ses nouveaux employés.",
-    "creds": ["IPN", "PEMEX", "Talent Land", "Agentic AI · Vanderbilt", "AI for Business · Wharton", "Instructeur certifié EC0217 · CONOCER"],
-    "cta": "Biographie complète",
-    "stage": "Sur scène"
-  },
-  "faq": {
-    "kicker": "FAQ",
+  "work": {
+    "label": "Réalisations",
     "items": [
-      { "q": "Dois-je savoir programmer ?", "a": "Non. Vous connaissez votre métier ; je m'occupe de la technique et je vous apprends à diriger les agents en langage courant." },
-      { "q": "Mon entreprise est-elle trop petite pour cela ?", "a": "Au contraire. Ce sont les petites équipes qui y gagnent le plus : un agent bien conçu ajoute des heures de travail sans ajouter de masse salariale." },
-      { "q": "Que deviennent les données de mon entreprise ?", "a": "Chaque agent n'accède qu'à ce dont il a besoin, avec des permissions minimales et une personne responsable. La sécurité est pensée dès le premier jour." },
-      { "q": "Travaillez-vous en dehors du Mexique ?", "a": "Oui. Tout le travail peut se faire à distance, en espagnol ou en anglais." }
+      { "slug": "plataforma-operada-con-agentes", "tag": "aiLearning", "title": "Une plateforme gérée par 3 personnes et des agents" },
+      { "slug": "pemex-simop", "tag": "PEMEX", "title": "IA générative : −66 % de charge opérationnelle" },
+      { "slug": "pipeline-de-ventas-con-ia", "tag": "Ventes", "title": "Un pipeline qui tourne seul : −80 % de temps" }
     ]
   },
-  "final": {
-    "title": "La porte est déjà ouverte.",
-    "subtitle": "Vingt minutes suffisent pour savoir si un agent peut changer votre semaine.",
-    "cta": "Réservez votre appel",
-    "or": "ou écrivez-moi à"
+  "stack": {
+    "label": "Mes outils"
   },
   "booking": {
     "title": "Réserver avec Jeshua",
@@ -143,68 +53,40 @@
     "free": "Gratuit",
     "fallback": "Vous préférez écrire ?"
   },
-  "bento": {
-    "profile_title": "Jeshua Salazar"
-  },
   "contact": {
-    "title": "Parlons de votre activité",
-    "subtitle": "Dites-moi quel processus vous prend le plus de temps. Je réponds sous un jour ouvré avec une prochaine étape concrète.",
-    "name": "Nom complet",
+    "title": "Parlons-en",
+    "subtitle": "Dites-moi quel processus vous prend le plus de temps. Je réponds sous un jour ouvré.",
+    "name": "Nom",
     "email": "E-mail",
     "organization": "Entreprise (facultatif)",
     "projectType": "Qu'est-ce qui vous intéresse ?",
-    "projectType_placeholder": "Sélectionnez une option",
-    "projectType_diagnostico": "Appel découverte (20 min, gratuit)",
+    "projectType_placeholder": "Choisir une option",
+    "projectType_diagnostico": "Appel de découverte (gratuit)",
     "projectType_estrategia": "Session stratégique 1:1",
     "projectType_implementacion": "Équipe d'agents sur mesure",
     "projectType_formacion": "Formation pour mon équipe (aiLearning)",
     "projectType_conferencia": "Conférence ou atelier",
     "projectType_other": "Autre chose",
-    "message": "Quel processus aimeriez-vous confier à un agent ? Indiquez vos disponibilités pour l'appel.",
+    "message": "Que souhaitez-vous confier à un agent ? Indiquez vos disponibilités.",
     "consent": "J'accepte que mes données soient traitées pour répondre à cette demande.",
-    "submit": "Envoyer la demande",
-    "sending": "Envoi en cours...",
-    "success": "C'est fait ! J'ai bien reçu votre demande. Je réponds sous un jour ouvré.",
-    "error_invalid": "Veuillez remplir tous les champs obligatoires avec des données valides.",
+    "submit": "Envoyer",
+    "sending": "Envoi…",
+    "success": "C'est fait. Je réponds sous un jour ouvré.",
+    "error_invalid": "Veuillez remplir les champs obligatoires.",
     "error_bot": "La vérification anti-spam a échoué. Veuillez réessayer.",
-    "error_server": "Un problème est survenu de notre côté. Écrivez-moi directement à hola@jeshuasalazar.com.",
+    "error_server": "Une erreur s'est produite. Écrivez-moi à hola@jeshuasalazar.com.",
     "direct": "Contact direct"
   },
-  "aboutPage": {
-    "kicker": "À propos",
-    "title": "Je construis des équipes où les personnes dirigent et les agents exécutent.",
-    "paragraphs": [
-      "Je suis cofondateur et CTO d'aiLearning Innovación y Desarrollo Educativo, où je conçois l'infrastructure d'IA et des modèles Agent-as-a-Service pour les entreprises et les professionnels. Je suis diplômé en Digital Business et titulaire d'un diplôme technique en systèmes numériques de l'Instituto Politécnico Nacional du Mexique ; mon mémoire portait sur la façon dont l'IA optimise les ventes numériques dans le Social Commerce.",
-      "aiLearning est la plateforme d'apprentissage de l'IA made in Mexico. Sa promesse : « N'apprenez pas l'IA. Maîtrisez-la. » : une formation pratique avec des cours en direct et des projets réels sur cinq niveaux, de Nexo (découvrir) à Zenit (diriger des systèmes autonomes). Depuis 2024, je dirige la construction de la plateforme et de son académie, où une équipe de trois personnes travaille avec des agents IA comme membres à part entière. Côté commercial, j'ai piloté la stratégie de Social Commerce qui a rempli nos événements dans des lieux comme la CANACO et l'AMCP, et automatisé le pipeline commercial avec l'IA, réduisant jusqu'à 80 % le temps de gestion des leads.",
-      "Au siège de PEMEX, j'ai utilisé l'IA générative pour rédiger les user stories du projet de traçabilité SIMOP et réduit de 66 % la charge opérationnelle de l'équipe ; j'ai aussi conçu des tableaux de bord Power BI pour la direction. Pendant trois ans, j'ai été leader de communauté et ambassadeur de Talent Land, l'un des plus grands événements tech d'Amérique latine, devant des publics de plus de 2 000 personnes. Auparavant, j'ai géré un fonds d'investissement privé."
-    ],
-    "factsTitle": "En bref",
-    "facts": [
-      { "k": "Poste actuel", "v": "Cofondateur et CTO · aiLearning" },
-      { "k": "Formation", "v": "Licence en Digital Business et technicien en systèmes numériques · IPN" },
-      { "k": "Impact en entreprise", "v": "PEMEX : −66 % de charge opérationnelle grâce à l'IA générative" },
-      { "k": "Scènes", "v": "Talent Land (2 000+ personnes), CANACO, AMCP" },
-      { "k": "Langues", "v": "Espagnol, anglais (C1), français (B1), allemand de base" }
-    ],
-    "certsTitle": "Certifications",
-    "certs": ["Agentic AI · Vanderbilt", "AI for Business · Wharton", "Salesforce Agentforce", "Power BI", "Inbound · HubSpot", "Instructeur certifié EC0217 · CONOCER-SEP"],
-    "cta": "Travaillons ensemble"
-  },
   "cases": {
-    "kicker": "Cas",
-    "title": "Des cas réels, des résultats mesurables.",
-    "subtitle": "Des projets où l'IA a cessé d'être une démo pour devenir un membre de l'équipe.",
     "role_label": "Rôle :",
     "outcomes_label": "Résultats",
     "problem_label": "Défi",
     "tech_label": "Outils",
-    "back": "Retour aux cas",
-    "read": "Voir le cas"
+    "back": "Jeshua Salazar"
   },
   "footer": {
     "tagline": "Les agents IA sont les nouveaux employés.",
-    "rights": "Tous droits réservés.",
-    "privacy": "Confidentialité",
-    "built_with": "Conçu au Mexique"
+    "rights": "Made in Mexico.",
+    "privacy": "Confidentialité"
   }
 }
