@@ -1,4 +1,12 @@
-import { Locale } from "@/lib/i18n";
+import type { Metadata } from "next";
+import { getDictionary, type Locale } from "@/lib/i18n";
+import { alternates } from "@/lib/seo";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  const d = await getDictionary(locale as Locale);
+  return { title: d.footer.privacy, alternates: alternates(locale, "/privacidad"), robots: { index: true, follow: true } };
+}
 
 export default async function PrivacyPage({
   params,

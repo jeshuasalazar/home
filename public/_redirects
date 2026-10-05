@@ -1,0 +1,7 @@
+# Raíz → español (idioma principal). 301 para que Google consolide la autoridad.
+/            /es        301
+/index.html  /es        301
+# Rutas del diseño anterior que ya no existen
+/:lang/sobre-mi   /:lang   301
+/:lang/proyectos  /:lang   301
+/:lang/proyectos/pipeline-de-ventas-con-ia  /:lang  301
