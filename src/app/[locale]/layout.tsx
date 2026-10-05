@@ -4,6 +4,7 @@ import Booking from "@/components/Booking";
 import Footer from "@/components/Footer";
 import Starfield from "@/components/Starfield";
 import { getDictionary, isRTL, type Locale, locales } from "@/lib/i18n";
+import { alternates } from "@/lib/seo";
 import { type ServiceId, site } from "@/lib/site";
 import "../globals.css";
 
@@ -19,27 +20,35 @@ export const viewport: Viewport = {
   colorScheme: "dark",
 };
 
+const ogLocale: Record<string, string> = { es: "es_MX", en: "en_US", fr: "fr_FR", de: "de_DE", ar: "ar_AR", zh: "zh_CN" };
+
+// Valores por defecto; cada página define su canónica y hreflang.
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   const dict = await getDictionary(locale as Locale);
   return {
     metadataBase: new URL(site.url),
-    title: { default: dict.meta.title, template: `%s · Jeshua Salazar` },
+    title: { default: dict.meta.title, template: "%s · Jeshua Salazar" },
     description: dict.meta.description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: Object.fromEntries(locales.map((l) => [l, `/${l}`])),
-    },
+    applicationName: "Jeshua Salazar",
+    authors: [{ name: "Jeshua Salazar", url: site.url }],
+    creator: "Jeshua Salazar",
+    alternates: alternates(locale),
+    robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1, "max-video-preview": -1 } },
     openGraph: {
-      type: "website",
+      type: "profile",
+      firstName: "Jeshua",
+      lastName: "Salazar",
       url: `/${locale}`,
       siteName: "Jeshua Salazar",
       title: dict.meta.title,
       description: dict.meta.description,
-      images: [{ url: "/img/og.jpg", width: 1200, height: 630 }],
-      locale,
+      images: [{ url: "/img/og.jpg", width: 1200, height: 630, alt: "Jeshua Salazar" }],
+      locale: ogLocale[locale] ?? locale,
+      alternateLocale: locales.filter((l) => l !== locale).map((l) => ogLocale[l]),
     },
     twitter: { card: "summary_large_image", title: dict.meta.title, description: dict.meta.description, images: ["/img/og.jpg"] },
+    ...(process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION ? { verification: { google: process.env.NEXT_PUBLIC_GOOGLE_VERIFICATION } } : {}),
   };
 }
 
@@ -56,21 +65,61 @@ export default async function LocalizedLayout({
 
   const services = dict.services.items.map((s) => ({ id: s.id as ServiceId, name: s.name, desc: s.desc }));
 
+  const person = `${site.url}/#jeshua`;
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
-    name: "Jeshua Salazar",
-    url: site.url,
-    image: `${site.url}/img/retrato-1000.webp`,
-    jobTitle: dict.hero.role,
-    email: `mailto:${site.email}`,
-    sameAs: [site.linkedin],
-    worksFor: { "@type": "Organization", name: "aiLearning", url: site.ailearning },
-    alumniOf: { "@type": "CollegeOrUniversity", name: "Instituto Politécnico Nacional" },
-    makesOffer: dict.services.items.map((s) => ({
-      "@type": "Offer",
-      itemOffered: { "@type": "Service", name: s.name, description: s.desc },
-    })),
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": person,
+        name: "Jeshua Salazar",
+        url: site.url,
+        image: `${site.url}/img/retrato-1000.webp`,
+        jobTitle: dict.hero.role,
+        description: dict.meta.description,
+        email: `mailto:${site.email}`,
+        sameAs: [site.linkedin, site.github, "https://cal.com/jeshuasalazar"],
+        worksFor: { "@type": "Organization", name: "aiLearning", url: site.ailearning },
+        alumniOf: { "@type": "CollegeOrUniversity", name: "Instituto Politécnico Nacional", url: "https://www.ipn.mx" },
+        address: { "@type": "PostalAddress", addressLocality: "Ciudad de México", addressCountry: "MX" },
+        knowsLanguage: ["es", "en", "fr", "de"],
+        knowsAbout: ["Inteligencia artificial", "Agentes de IA", "Automatización de procesos", "IA generativa", "Claude Code", "Social Commerce"],
+      },
+      {
+        "@type": "WebSite",
+        "@id": `${site.url}/#website`,
+        url: site.url,
+        name: "Jeshua Salazar",
+        inLanguage: locales,
+        publisher: { "@id": person },
+      },
+      {
+        "@type": "ProfessionalService",
+        "@id": `${site.url}/#servicios`,
+        name: "Jeshua Salazar · Agentes de IA para empresas",
+        url: `${site.url}/${locale}`,
+        image: `${site.url}/img/og.jpg`,
+        email: site.email,
+        founder: { "@id": person },
+        areaServed: [{ "@type": "Country", name: "México" }, "Latinoamérica"],
+        address: { "@type": "PostalAddress", addressLocality: "Ciudad de México", addressCountry: "MX" },
+        priceRange: "$$",
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: dict.services.label,
+          itemListElement: dict.services.items.map((s) => {
+            const id = s.id as ServiceId;
+            const price = id === "diagnostico" ? "0" : id === "estrategia" ? "3900" : null;
+            return {
+              "@type": "Offer",
+              url: site.booking[id] ?? `${site.url}/${locale}/contacto`,
+              ...(price ? { price, priceCurrency: "MXN" } : {}),
+              itemOffered: { "@type": "Service", name: s.name, description: s.desc, provider: { "@id": person } },
+            };
+          }),
+        },
+      },
+    ],
   };
 
   return (

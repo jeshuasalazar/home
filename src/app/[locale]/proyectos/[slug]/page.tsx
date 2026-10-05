@@ -1,15 +1,30 @@
 import fs from "node:fs";
 import path from "node:path";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { locales, Locale, getDictionary } from "@/lib/i18n";
 import { getProjectBySlug } from "@/lib/mdx";
+import { alternates } from "@/lib/seo";
+import { site } from "@/lib/site";
 
 export async function generateStaticParams() {
   const CONTENT_PATH = path.join(process.cwd(), "src/content/projects");
   if (!fs.existsSync(CONTENT_PATH)) return [];
   const slugs = fs.readdirSync(CONTENT_PATH).filter((s) => fs.statSync(path.join(CONTENT_PATH, s)).isDirectory());
   return locales.flatMap((locale) => slugs.map((slug) => ({ locale, slug })));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const p = getProjectBySlug(slug, locale as Locale);
+  if (!p) return {};
+  return {
+    title: p.frontmatter.title,
+    description: p.frontmatter.summary,
+    alternates: alternates(locale, `/proyectos/${slug}`),
+    openGraph: { type: "article", title: p.frontmatter.title, description: p.frontmatter.summary, url: `/${locale}/proyectos/${slug}` },
+  };
 }
 
 function SimpleMarkdown({ content }: { content: string }) {
@@ -90,6 +105,33 @@ export default async function ProjectDetailPage({
 
   return (
     <article className="col pb-16 pt-12">
+      <script
+        type="application/ld+json"
+        // biome-ignore lint/security/noDangerouslySetInnerHtml: JSON-LD estático, con "<" escapado
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Article",
+                headline: f.title,
+                description: f.summary,
+                inLanguage: locale,
+                dateModified: f.updatedAt,
+                author: { "@id": `${site.url}/#jeshua` },
+                mainEntityOfPage: `${site.url}/${locale}/proyectos/${slug}`,
+              },
+              {
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  { "@type": "ListItem", position: 1, name: "Jeshua Salazar", item: `${site.url}/${locale}` },
+                  { "@type": "ListItem", position: 2, name: f.title, item: `${site.url}/${locale}/proyectos/${slug}` },
+                ],
+              },
+            ],
+          }).replace(/</g, "\\u003c"),
+        }}
+      />
       <Link href={`/${locale}`} className="text-sm text-[var(--color-label-2)] hover:text-white">
         ← {d.cases.back}
       </Link>
