@@ -453,7 +453,6 @@
 }
 @media (prefers-reduced-motion: no-preference) {
   .enter { animation: enter 0.9s var(--ease-apple) both; animation-delay: calc(var(--i, 0) * 70ms + 100ms); }
-  .horizon img { animation: draw 2.4s var(--ease-apple) both; }
 
   @supports (animation-timeline: view()) {
     .reveal {
