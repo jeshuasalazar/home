@@ -205,16 +205,24 @@ export default function CodeScene({ src, className }: { src: string; className?:
       raf = requestAnimationFrame(loop);
     };
 
-    const io = new IntersectionObserver(([e]) => {
-      visible = e.isIntersecting;
-    });
+    // La imagen y el código se preparan solo cuando la escena se acerca a la pantalla.
+    let requested = false;
+    const io = new IntersectionObserver(
+      ([e]) => {
+        visible = e.isIntersecting;
+        if (visible && !requested) {
+          requested = true;
+          img.src = src;
+        }
+      },
+      { rootMargin: "200px" },
+    );
     io.observe(canvas);
     const ro = new ResizeObserver(() => {
       if (img.complete) layout();
     });
     ro.observe(canvas);
     img.onload = () => document.fonts.ready.then(start);
-    img.src = src;
 
     return () => {
       cancelAnimationFrame(raf);

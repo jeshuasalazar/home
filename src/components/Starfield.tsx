@@ -66,9 +66,14 @@ export default function Starfield() {
         window.removeEventListener("resize", init);
       };
     }
-    raf = requestAnimationFrame(loop);
+    // Arranca cuando el navegador queda libre, para no competir con la carga.
+    const idle = window.requestIdleCallback ?? ((cb: () => void) => setTimeout(cb, 1200));
+    const idleId = idle(() => {
+      raf = requestAnimationFrame(loop);
+    });
     window.addEventListener("resize", init);
     return () => {
+      window.cancelIdleCallback?.(idleId as number);
       cancelAnimationFrame(raf);
       window.removeEventListener("resize", init);
     };
