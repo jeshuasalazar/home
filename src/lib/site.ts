@@ -12,10 +12,10 @@ export const site = {
   github: "https://github.com/jeshuasalazar",
   ailearning: "https://ailearning.mx",
   booking: {
-    diagnostico: null as string | null,
-    estrategia: null as string | null,
-    implementacion: null as string | null,
-    conferencia: null as string | null,
+    diagnostico: "https://cal.com/jeshuasalazar/diagnostico" as string | null,
+    estrategia: "https://cal.com/jeshuasalazar/sesion-estrategica" as string | null,
+    implementacion: "https://cal.com/jeshuasalazar/implementacion" as string | null,
+    conferencia: "https://cal.com/jeshuasalazar/conferencia" as string | null,
   } satisfies Record<ServiceId, string | null>,
   // Precio visible por servicio (null = sin precio público).
   prices: {
