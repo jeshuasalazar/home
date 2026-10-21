@@ -55,6 +55,11 @@
     "label": "Projekte",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "Ontologie",
+        "title": "Prüfbare KI mit 0 Tokens pro Abfrage"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "Eine Plattform, betrieben von 3 Personen und Agenten"
@@ -62,7 +67,7 @@
       {
         "slug": "kit-agentes-ia",
         "tag": "Open Source",
-        "title": "5 Agenten parallel: 39 s und 0,87 US$"
+        "title": "5 Agenten parallel für unter 1 US$"
       },
       {
         "slug": "pemex-simop",

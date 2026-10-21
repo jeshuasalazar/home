@@ -55,6 +55,11 @@
     "label": "Réalisations",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "Ontologie",
+        "title": "IA auditable à 0 jeton par requête"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "Une plateforme gérée par 3 personnes et des agents"
@@ -62,7 +67,7 @@
       {
         "slug": "kit-agentes-ia",
         "tag": "Open source",
-        "title": "5 agents en parallèle : 39 s et 0,87 US$"
+        "title": "5 agents en parallèle pour moins de 1 US$"
       },
       {
         "slug": "pemex-simop",

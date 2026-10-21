@@ -9,6 +9,7 @@ import { bookingHref, type ServiceId, site } from "@/lib/site";
 
 // Escenas de Trabajo: imagen base en gris + lugar para el HUD.
 const scenes: Record<string, { img: string; place: string }> = {
+  "ontologia-ia-auditable": { img: "ontologia", place: "GITHUB" },
   "plataforma-operada-con-agentes": { img: "ailearning", place: "CDMX" },
   "kit-agentes-ia": { img: "agentes", place: "GITHUB" },
   "pemex-simop": { img: "pemex", place: "CDMX" },

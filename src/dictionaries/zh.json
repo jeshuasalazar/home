@@ -55,6 +55,11 @@
     "label": "作品",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "本体",
+        "title": "可审计的 AI：每次查询 0 token"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "一个由 3 个人和智能体运营的平台"
@@ -62,7 +67,7 @@
       {
         "slug": "kit-agentes-ia",
         "tag": "开源",
-        "title": "5 个智能体并行：39 秒，0.87 美元"
+        "title": "5 个智能体并行，每次不到 1 美元"
       },
       {
         "slug": "pemex-simop",

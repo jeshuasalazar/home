@@ -55,6 +55,11 @@
     "label": "Trabajo",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "Ontología",
+        "title": "IA auditable con 0 tokens por consulta"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "Una plataforma operada por 3 personas y agentes"
@@ -62,7 +67,7 @@
       {
         "slug": "kit-agentes-ia",
         "tag": "Código abierto",
-        "title": "5 agentes en paralelo: 39 s y US$0.87"
+        "title": "5 agentes en paralelo por menos de US$1"
       },
       {
         "slug": "pemex-simop",

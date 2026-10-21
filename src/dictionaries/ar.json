@@ -55,6 +55,11 @@
     "label": "الأعمال",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "الأنطولوجيا",
+        "title": "ذكاء اصطناعي قابل للتدقيق بصفر رموز لكل استعلام"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "منصة يديرها 3 أشخاص ووكلاء"
@@ -62,7 +67,7 @@
       {
         "slug": "kit-agentes-ia",
         "tag": "مفتوح المصدر",
-        "title": "5 وكلاء بالتوازي: 39 ثانية و0.87 دولار"
+        "title": "5 وكلاء بالتوازي بأقل من دولار واحد"
       },
       {
         "slug": "pemex-simop",
