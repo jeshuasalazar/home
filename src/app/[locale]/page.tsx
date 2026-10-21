@@ -1,4 +1,4 @@
-import { siClaude, siCloudflare, siGithub, siNextdotjs, siStripe, siSupabase } from "simple-icons";
+import { siClaude, siCloudflare, siDocker, siGithub, siNextdotjs, siPostgresql, siPython, siStripe, siSupabase } from "simple-icons";
 import Actions from "@/components/Actions";
 import { serviceIcons } from "@/components/serviceMeta";
 import Clock from "@/components/Clock";
@@ -10,7 +10,9 @@ import { bookingHref, type ServiceId, site } from "@/lib/site";
 // Escenas de Trabajo: imagen base en gris + lugar para el HUD.
 const scenes: Record<string, { img: string; place: string }> = {
   "plataforma-operada-con-agentes": { img: "ailearning", place: "CDMX" },
+  "kit-agentes-ia": { img: "agentes", place: "GITHUB" },
   "pemex-simop": { img: "pemex", place: "CDMX" },
+  "space-gray-mx": { img: "spacegray", place: "CDMX" },
   "talent-land": { img: "talentland", place: "GDL" },
 };
 
@@ -19,7 +21,10 @@ const stack: { name: string; path?: string; mono?: string }[] = [
   { name: "Claude Code", path: siClaude.path },
   { name: "Codex", mono: "Cx" },
   { name: "Higgsfield", mono: "H" },
+  { name: "Python", path: siPython.path },
+  { name: "Docker", path: siDocker.path },
   { name: "Next.js", path: siNextdotjs.path },
+  { name: "PostgreSQL", path: siPostgresql.path },
   { name: "Supabase", path: siSupabase.path },
   { name: "Stripe", path: siStripe.path },
   { name: "Cloudflare", path: siCloudflare.path },

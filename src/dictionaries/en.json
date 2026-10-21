@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jeshua Salazar · AI Consultant and AI Agent Teams in Mexico",
-    "description": "Jeshua Salazar, co-founder and CTO of aiLearning. I design and implement teams of AI agents for companies, give talks and 1:1 consulting from Mexico. Book a call."
+    "description": "Jeshua Salazar, co-founder and CTO of aiLearning and founder of Space Gray MX. I take AI to production inside companies: agents, integrations and measurable results. Talks and consulting from Mexico City."
   },
   "nav": {
     "home": "Home",
     "contact": "Contact"
   },
   "hero": {
-    "role": "Co-founder and CTO of aiLearning",
+    "role": "Co-founder and CTO of aiLearning · Founder of Space Gray MX",
     "tagline_a": "I build teams of AI agents",
     "tagline_b": "that work like employees.",
     "cta_book": "Book a call",
@@ -19,9 +19,9 @@
   "about": {
     "label": "About",
     "paragraphs": [
-      "I'm obsessed with good design and products that genuinely solve problems. I spend most of my time building with AI, implementing it in companies and teaching what works and what doesn't.",
-      "Right now that means three things. I design teams of agents that run sales, support, content and finance inside companies. I co-founded [aiLearning](https://ailearning.mx), the AI learning platform made in Mexico, run by three people and a team of agents. And I give talks on how to lead them.",
-      "Before that, I brought generative AI to PEMEX headquarters and was a Talent Land ambassador in front of audiences of more than 2,000 people. I'm an IPN graduate."
+      "I take AI to production inside companies. I sit with executives to find the highest-value workflow, design the integration, orchestrate models and agents with rules that make every result auditable, and measure the return in weeks, not months.",
+      "I'm an entrepreneur. I co-founded [aiLearning](https://ailearning.mx), the AI learning platform made in Mexico, run by three people and a team of agents; there, a multi-model pipeline shipped 114 lessons in 2 days. I founded Space Gray MX, a marketplace for certified MacBooks that grew sales 30x in 3 months. And I give talks on how to lead agents.",
+      "Before that, at PEMEX headquarters, I turned operational needs into requirements with generative AI and the team cut its workload by 66%. I was a Talent Land ambassador in front of audiences of 2,000+. I'm an IPN graduate and I work in Spanish and English."
     ]
   },
   "services": {
@@ -60,9 +60,19 @@
         "title": "A platform run by 3 people and agents"
       },
       {
+        "slug": "kit-agentes-ia",
+        "tag": "Open source",
+        "title": "5 agents in parallel: 39 s and US$0.87"
+      },
+      {
         "slug": "pemex-simop",
         "tag": "PEMEX",
         "title": "Generative AI: −66% operational load"
+      },
+      {
+        "slug": "space-gray-mx",
+        "tag": "Space Gray MX",
+        "title": "Sales 30x in 3 months"
       },
       {
         "slug": "talent-land",

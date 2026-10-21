@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jeshua Salazar · Teams aus KI-Agenten",
-    "description": "Ich entwerfe Teams aus KI-Agenten, die wie Mitarbeitende arbeiten, führe sie in Unternehmen ein und bringe Menschen bei, sie zu leiten. Gespräch buchen."
+    "description": "Jeshua Salazar, Mitgründer und CTO von aiLearning und Gründer von Space Gray MX. Ich bringe KI in Unternehmen in Produktion: Agenten, Integrationen und messbare Ergebnisse."
   },
   "nav": {
     "home": "Start",
     "contact": "Kontakt"
   },
   "hero": {
-    "role": "Mitgründer und CTO von aiLearning",
+    "role": "Mitgründer und CTO von aiLearning · Gründer von Space Gray MX",
     "tagline_a": "Ich baue Teams aus KI-Agenten,",
     "tagline_b": "die wie Mitarbeitende arbeiten.",
     "cta_book": "Gespräch buchen",
@@ -19,9 +19,9 @@
   "about": {
     "label": "Über mich",
     "paragraphs": [
-      "Ich bin besessen von gutem Design und von Produkten, die wirklich Probleme lösen. Die meiste Zeit baue ich mit KI, führe sie in Unternehmen ein und vermittle, was funktioniert und was nicht.",
-      "Aktuell heißt das drei Dinge. Ich entwerfe Agententeams, die in Unternehmen Vertrieb, Support, Content und Finanzen übernehmen. Ich habe [aiLearning](https://ailearning.mx) mitgegründet, die KI-Lernplattform „Made in Mexico“, betrieben von drei Personen und einem Team aus Agenten. Und ich halte Vorträge darüber, wie man sie führt.",
-      "Zuvor habe ich generative KI in die PEMEX-Zentrale gebracht und war Talent-Land-Botschafter vor mehr als 2.000 Zuhörenden. Ich bin Absolvent des IPN."
+      "Ich bringe KI in Unternehmen in Produktion. Mit der Geschäftsleitung finde ich den Prozess mit dem größten Wert, entwerfe die Integration, orchestriere Modelle und Agenten mit Regeln, die jedes Ergebnis prüfbar machen, und messe den Nutzen in Wochen statt Monaten.",
+      "Ich bin Unternehmer. Ich habe [aiLearning](https://ailearning.mx) mitgegründet, die in Mexiko entwickelte KI-Lernplattform, die drei Personen und ein Team aus Agenten betreiben; dort hat eine Pipeline mit mehreren Modellen 114 Lektionen in 2 Tagen veröffentlicht. Ich habe Space Gray MX gegründet, einen Marktplatz für zertifizierte MacBooks, der seinen Umsatz in 3 Monaten verdreißigfacht hat. Und ich halte Vorträge darüber, wie man Agenten führt.",
+      "Davor habe ich in der PEMEX-Zentrale operative Anforderungen mit generativer KI aufbereitet; das Team senkte seine Last um 66 %. Ich war Botschafter von Talent Land vor über 2.000 Menschen. Ich habe am IPN studiert und arbeite auf Spanisch und Englisch."
     ]
   },
   "services": {
@@ -60,9 +60,19 @@
         "title": "Eine Plattform, betrieben von 3 Personen und Agenten"
       },
       {
+        "slug": "kit-agentes-ia",
+        "tag": "Open Source",
+        "title": "5 Agenten parallel: 39 s und 0,87 US$"
+      },
+      {
         "slug": "pemex-simop",
         "tag": "PEMEX",
         "title": "Generative KI: −66 % operative Last"
+      },
+      {
+        "slug": "space-gray-mx",
+        "tag": "Space Gray MX",
+        "title": "Umsatz ×30 in 3 Monaten"
       },
       {
         "slug": "talent-land",

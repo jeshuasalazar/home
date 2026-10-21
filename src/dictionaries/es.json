@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jeshua Salazar · Consultor en Inteligencia Artificial y Agentes de IA en México",
-    "description": "Jeshua Salazar, cofundador y CTO de aiLearning. Diseño e implemento equipos de agentes de IA para empresas, doy conferencias y consultoría 1:1 en México. Agenda una llamada."
+    "description": "Jeshua Salazar, cofundador y CTO de aiLearning y fundador de Space Gray MX. Llevo la IA a producción dentro de empresas: agentes, integraciones y resultados medibles. Conferencias y consultoría en México."
   },
   "nav": {
     "home": "Inicio",
     "contact": "Contacto"
   },
   "hero": {
-    "role": "Cofundador y CTO de aiLearning",
+    "role": "Cofundador y CTO de aiLearning · Fundador de Space Gray MX",
     "tagline_a": "Construyo equipos de agentes de IA",
     "tagline_b": "que trabajan como empleados.",
     "cta_book": "Agendar llamada",
@@ -19,9 +19,9 @@
   "about": {
     "label": "Sobre mí",
     "paragraphs": [
-      "Me obsesionan el buen diseño y los productos que resuelven de verdad. Paso la mayor parte de mi tiempo construyendo con IA, implementándola en empresas y enseñando qué funciona y qué no.",
-      "Hoy eso son tres cosas. Diseño equipos de agentes que operan ventas, soporte, contenido y finanzas dentro de empresas. Cofundé [aiLearning](https://ailearning.mx), la plataforma de aprendizaje de IA hecha en México, que operamos tres personas y un equipo de agentes. Y doy conferencias sobre cómo dirigirlos.",
-      "Antes llevé la IA generativa a PEMEX corporativo y fui embajador de Talent Land frente a audiencias de más de 2,000 personas. Soy egresado del IPN."
+      "Llevo la IA a producción dentro de las empresas. Me siento con los directivos para encontrar el proceso que más valor tiene, diseño la integración, orquesto modelos y agentes con reglas que hacen auditable cada resultado, y mido el retorno en semanas, no en meses.",
+      "Soy emprendedor. Cofundé [aiLearning](https://ailearning.mx), la plataforma de aprendizaje de IA hecha en México, que operamos tres personas y un equipo de agentes; ahí un pipeline con varios modelos publicó 114 clases en 2 días. Fundé Space Gray MX, un marketplace de MacBooks certificadas que multiplicó sus ventas 30 veces en 3 meses. Y doy conferencias sobre cómo dirigir agentes.",
+      "Antes, en PEMEX corporativo, convertí necesidades operativas en requerimientos con IA generativa y el equipo redujo 66 % su carga. Fui embajador de Talent Land frente a más de 2,000 personas. Soy egresado del IPN y trabajo en español e inglés."
     ]
   },
   "services": {
@@ -60,9 +60,19 @@
         "title": "Una plataforma operada por 3 personas y agentes"
       },
       {
+        "slug": "kit-agentes-ia",
+        "tag": "Código abierto",
+        "title": "5 agentes en paralelo: 39 s y US$0.87"
+      },
+      {
         "slug": "pemex-simop",
         "tag": "PEMEX",
         "title": "IA generativa: −66 % de carga operativa"
+      },
+      {
+        "slug": "space-gray-mx",
+        "tag": "Space Gray MX",
+        "title": "Ventas ×30 en 3 meses"
       },
       {
         "slug": "talent-land",
