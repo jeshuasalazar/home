@@ -1,0 +1,37 @@
+---
+title: "IA auditable con una ontología: de probabilístico a determinístico"
+summary: "Un motor que responde preguntas de negocio y concilia facturas con reglas definidas una sola vez: 0 tokens por consulta y la misma respuesta, verificable, cada vez."
+year: 2026
+status: published
+role: "Arquitectura y desarrollo"
+problem: "Mandar los datos de la empresa a un LLM en cada pregunta cuesta tokens cada vez, da respuestas distintas a la misma pregunta y no deja nada que auditar."
+outcomes:
+  - "10 de 10 preguntas de prueba resueltas con 0 tokens."
+  - "Misma pregunta, mismos datos, misma respuesta: verificado por hash en cada corrida."
+  - "Conciliación de 6 facturas CFDI con las mismas decisiones que un agente LLM, en 5 ms y sin tokens."
+  - "Bitácora encadenada por hash: cualquier cambio a un registro pasado se detecta."
+technologies:
+  - "Python"
+  - "FastAPI"
+  - "LangGraph"
+  - "DuckDB / BigQuery"
+  - "Elasticsearch"
+  - "Docker"
+featured: true
+order: 0
+updatedAt: "2026-10-21"
+---
+
+## El reto
+
+Para una empresa regulada no basta con que la IA conteste: tiene que contestar lo mismo siempre y poder demostrar de dónde salió cada número. Un modelo probabilístico no da esa garantía, y además cobra tokens por cada pregunta.
+
+## La solución
+
+Una ontología en YAML versionado define cada métrica del negocio una sola vez. Por ejemplo, "días de inventario" son las unidades en existencia entre la venta diaria promedio de 28 días. Un motor determinístico convierte esa definición en SQL y la calcula sobre DuckDB o BigQuery. El agente, hecho con LangGraph, usa el LLM solo para traducir la pregunta, y rechaza lo que la ontología no define en lugar de inventar. Los tiempos de entrega se leen de correos de proveedores con Elasticsearch y alimentan una regla de reabasto que cita su fuente. Cada respuesta deja un registro con la versión de la ontología, la fórmula, la consulta y la huella de los datos.
+
+## Resultado
+
+El costo marginal por consulta tiende a cero y el sistema escala a cualquier número de usuarios sin presupuesto de tokens. Además corre donde viven los datos, detrás del firewall del cliente.
+
+Repositorio: github.com/jeshuasalazar/ontology-agent-demo

@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jeshua Salazar · AI 智能体团队",
-    "description": "我设计像员工一样工作的 AI 智能体团队，在企业中落地，并教大家如何领导它们。预约通话。"
+    "description": "Jeshua Salazar，aiLearning 联合创始人兼 CTO，Space Gray MX 创始人。我把 AI 部署到企业生产环境：智能体、系统集成和可衡量的成果。"
   },
   "nav": {
     "home": "首页",
     "contact": "联系"
   },
   "hero": {
-    "role": "aiLearning 联合创始人兼 CTO",
+    "role": "aiLearning 联合创始人兼 CTO · Space Gray MX 创始人",
     "tagline_a": "我打造 AI 智能体团队，",
     "tagline_b": "像员工一样工作。",
     "cta_book": "预约通话",
@@ -19,9 +19,9 @@
   "about": {
     "label": "关于",
     "paragraphs": [
-      "我痴迷于优秀的设计，以及真正解决问题的产品。我大部分时间都在用 AI 构建、在企业中落地，并分享哪些有效、哪些无效。",
-      "目前主要做三件事。我设计智能体团队，在企业内负责销售、客服、内容和财务。我联合创办了 [aiLearning](https://ailearning.mx)，墨西哥制造的 AI 学习平台，由三个人和一支智能体团队运营。我还就如何领导它们发表演讲。",
-      "此前，我把生成式 AI 带进了 PEMEX 总部，并作为 Talent Land 大使面对超过 2,000 人的观众演讲。我毕业于 IPN。"
+      "我把 AI 部署到企业的生产环境。我和管理层一起找出最有价值的流程，设计集成方案，用让每个结果都可审计的规则编排模型和智能体，并在几周而不是几个月内衡量回报。",
+      "我是创业者。我联合创立了 [aiLearning](https://ailearning.mx)，这是在墨西哥打造的 AI 学习平台，由三个人和一支智能体团队运营；在那里，一条多模型流水线在 2 天内发布了 114 节课。我创立了 Space Gray MX，一个认证 MacBook 交易平台，3 个月内销售额增长 30 倍。我也做关于如何领导智能体的演讲。",
+      "此前，我在 PEMEX 总部用生成式 AI 把运营需求转化为需求文档，团队的运营负荷降低了 66%。我曾作为 Talent Land 大使面对 2,000 多名观众。我毕业于 IPN，使用西班牙语和英语工作。"
     ]
   },
   "services": {
@@ -55,14 +55,29 @@
     "label": "作品",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "本体",
+        "title": "可审计的 AI：每次查询 0 token"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "一个由 3 个人和智能体运营的平台"
       },
       {
+        "slug": "kit-agentes-ia",
+        "tag": "开源",
+        "title": "5 个智能体并行，每次不到 1 美元"
+      },
+      {
         "slug": "pemex-simop",
         "tag": "PEMEX",
         "title": "生成式 AI：运营负荷降低 66%"
+      },
+      {
+        "slug": "space-gray-mx",
+        "tag": "Space Gray MX",
+        "title": "3 个月销售额增长 30 倍"
       },
       {
         "slug": "talent-land",

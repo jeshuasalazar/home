@@ -1,0 +1,37 @@
+---
+title: "Auditable AI with an ontology: from probabilistic to deterministic"
+summary: "An engine that answers business questions and reconciles invoices with rules defined once: 0 tokens per query and the same verifiable answer every time."
+year: 2026
+status: published
+role: "Architecture and development"
+problem: "Sending company data to an LLM on every question costs tokens every time, gives different answers to the same question and leaves nothing to audit."
+outcomes:
+  - "10 of 10 golden questions answered with 0 tokens."
+  - "Same question, same data, same answer: hash-verified on every run."
+  - "6 CFDI invoices reconciled with the same decisions as an LLM agent, in 5 ms and with no tokens."
+  - "Hash-chained audit log: any change to a past record is detected."
+technologies:
+  - "Python"
+  - "FastAPI"
+  - "LangGraph"
+  - "DuckDB / BigQuery"
+  - "Elasticsearch"
+  - "Docker"
+featured: true
+order: 0
+updatedAt: "2026-10-21"
+---
+
+## The challenge
+
+For a regulated company, it is not enough for AI to answer. It has to give the same answer every time and prove where each number came from. A probabilistic model cannot guarantee that, and it bills tokens for every question.
+
+## The solution
+
+An ontology in versioned YAML defines each business metric once. For example, "days of inventory" is units on hand divided by average daily sales over 28 days. A deterministic engine compiles that definition to SQL and runs it on DuckDB or BigQuery. The agent, built with LangGraph, uses the LLM only to translate the question, and refuses what the ontology does not define instead of making it up. Lead times are read from supplier emails with Elasticsearch and feed a reorder rule that cites its source. Every answer leaves a record with the ontology version, the formula, the query and the data fingerprint.
+
+## Result
+
+Marginal cost per query tends to zero, so the system scales to any number of users without a token budget. It also runs where the data lives, behind the client's firewall.
+
+Repository: github.com/jeshuasalazar/ontology-agent-demo

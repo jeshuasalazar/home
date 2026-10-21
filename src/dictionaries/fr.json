@@ -1,14 +1,14 @@
 {
   "meta": {
     "title": "Jeshua Salazar · Équipes d'agents IA",
-    "description": "Je conçois des équipes d'agents IA qui travaillent comme des employés, je les déploie en entreprise et j'apprends à les diriger. Réservez un appel."
+    "description": "Jeshua Salazar, cofondateur et CTO d'aiLearning et fondateur de Space Gray MX. Je mets l'IA en production dans les entreprises : agents, intégrations et résultats mesurables."
   },
   "nav": {
     "home": "Accueil",
     "contact": "Contact"
   },
   "hero": {
-    "role": "Cofondateur et CTO d'aiLearning",
+    "role": "Cofondateur et CTO d'aiLearning · Fondateur de Space Gray MX",
     "tagline_a": "Je construis des équipes d'agents IA",
     "tagline_b": "qui travaillent comme des employés.",
     "cta_book": "Réserver un appel",
@@ -19,9 +19,9 @@
   "about": {
     "label": "À propos",
     "paragraphs": [
-      "Je suis passionné par le beau design et les produits qui résolvent vraiment des problèmes. Je passe l'essentiel de mon temps à construire avec l'IA, à la déployer en entreprise et à enseigner ce qui marche ou non.",
-      "Aujourd'hui, cela recouvre trois choses. Je conçois des équipes d'agents qui gèrent les ventes, le support, le contenu et la finance au sein d'entreprises. J'ai cofondé [aiLearning](https://ailearning.mx), la plateforme d'apprentissage de l'IA made in Mexico, portée par trois personnes et une équipe d'agents. Et je donne des conférences sur la façon de les diriger.",
-      "Auparavant, j'ai introduit l'IA générative au siège de PEMEX et j'ai été ambassadeur de Talent Land devant plus de 2 000 personnes. Je suis diplômé de l'IPN."
+      "Je mets l'IA en production dans les entreprises. Je travaille avec les dirigeants pour trouver le processus qui a le plus de valeur, je conçois l'intégration, j'orchestre modèles et agents avec des règles qui rendent chaque résultat auditable, et je mesure le retour en semaines, pas en mois.",
+      "Je suis entrepreneur. J'ai cofondé [aiLearning](https://ailearning.mx), la plateforme d'apprentissage de l'IA née au Mexique, gérée par trois personnes et une équipe d'agents ; un pipeline multi-modèles y a publié 114 leçons en 2 jours. J'ai fondé Space Gray MX, une place de marché de MacBook certifiés dont les ventes ont été multipliées par 30 en 3 mois. Et je donne des conférences sur la façon de diriger des agents.",
+      "Avant, au siège de PEMEX, j'ai transformé des besoins opérationnels en exigences grâce à l'IA générative et l'équipe a réduit sa charge de 66 %. J'ai été ambassadeur de Talent Land devant plus de 2 000 personnes. Je suis diplômé de l'IPN et je travaille en espagnol et en anglais."
     ]
   },
   "services": {
@@ -55,14 +55,29 @@
     "label": "Réalisations",
     "items": [
       {
+        "slug": "ontologia-ia-auditable",
+        "tag": "Ontologie",
+        "title": "IA auditable à 0 jeton par requête"
+      },
+      {
         "slug": "plataforma-operada-con-agentes",
         "tag": "aiLearning",
         "title": "Une plateforme gérée par 3 personnes et des agents"
       },
       {
+        "slug": "kit-agentes-ia",
+        "tag": "Open source",
+        "title": "5 agents en parallèle pour moins de 1 US$"
+      },
+      {
         "slug": "pemex-simop",
         "tag": "PEMEX",
         "title": "IA générative : −66 % de charge opérationnelle"
+      },
+      {
+        "slug": "space-gray-mx",
+        "tag": "Space Gray MX",
+        "title": "Ventes ×30 en 3 mois"
       },
       {
         "slug": "talent-land",
